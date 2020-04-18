@@ -474,6 +474,10 @@
 
 		<!--end::Global Theme Bundle -->
 
+			<!--Angualrjs --> 
+		
+	<!--/Angualrjs --> 
+
 		<!--begin::Page Vendors(used by this page) -->
 <!-- 		<script src="<?php echo back_skin; ?>assets/plugins/custom/fullcalendar/fullcalendar.bundle.js" type="text/javascript"></script> -->
 		<!--end::Page Vendors -->

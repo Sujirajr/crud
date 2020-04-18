@@ -92,10 +92,122 @@
 						<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
 
 							<div class="alert alert-light alert-elevate" role="alert">
-								<div class="alert-icon" data-skin="brand" data-toggle="kt-tooltip" data-placement="top" title="" data-original-title="Help"><i class="flaticon-alert kt-font-brand"></i></div>
-								<div class="alert-text"><span class="kt-font-success kt-font-boldest">How to use?</span>
-									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <a class="kt-link kt-font-bold" href="#" target="_blank">here</a>.
-								</div>
+								
+
+
+
+<div ng-controller="users" data-ng-init="usersInformation()" class="container">
+	<div class="col-md-12">
+		<div>
+			
+		</div>
+	</div>
+	<div class="col-md-12">
+		<div class="add_panel" style="display: none">
+			<a ng-click="addModal();" class="model_form btn btn-primary">
+				<i class="glyphicon glyphicon-plus"></i> Add User</a>
+            <div class="clearfix"></div>
+		</div>
+		<div class="table-responsive">
+			<table datatable="ng"  id="examples" 
+				class="table table-striped table-bordered" cellspacing="0" 
+					width="100%">
+				<thead>
+					<tr>
+						<th>S.No</th>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Position</th>
+						<th>Data Of Birth</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="user in users_list">
+						<td>{{$index + 1}}</td>
+						<td>{{user.name}}</td>
+						<td>{{user.email}}</td>
+						<td>{{user.position}}</td>
+						<td>{{user.dob | date: "yyyy-MM-dd"}}</td>
+						<td>
+							<a href="javascript:void(0);" ng-click="EditModal(user);"> 
+								<i class="glyphicon glyphicon-pencil"></i>
+							</a>
+							<a href="javascript:void(0);" ng-click="DeleteModal(user)" class="delete"> 
+								<i class="glyphicon glyphicon-remove"></i> 
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div ng-if="success_msg" class="success_pop alert alert-success">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			 <strong> {{success_msg}} </strong> 
+		</div>
+	</div>
+    
+    
+<!-- Form modal -->
+  <div id="form_modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title"><i class="icon-paragraph-justify2"></i>
+          {{form_name}}</h4>
+        </div>
+        <!-- Form inside modal -->
+        <form  method="post" ng-submit="UserAddUpdate(users_form);" id="cat_form">
+          <div class="modal-body with-padding">
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-12">
+                  <label>Name :</label>
+                   <input type="text" name="name" ng-model="users_form.name" 
+						id="name" required="required" class="form-control">
+                </div>
+              </div>
+            </div>            
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-12">
+                  <label>Email :</label>
+                   <input type="email" name="email" ng-model="users_form.email" 
+						id="email" required="required"  class="form-control email">
+                </div>
+              </div>
+            </div>
+			<div class="form-group">
+              <div class="row">
+                <div class="col-sm-12">
+                  <label>Position :</label>
+                   <input type="text" name="position" ng-model="users_form.position" 
+						id="position" required="required"  class="form-control">
+                </div>
+              </div>
+            </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <label>Birthday :</label>
+                   <input type="date" placeholder="yyyy-MM-dd" id="dob" 
+							max="<?php echo date('Y-m-d'); ?>" ng-model="users_form.dob" 
+					class="form-control" required="required"  name="dob">
+                </div>
+              </div>
+            </div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button>
+			  <button type="submit" name="form_data" class="btn btn-primary">Submit</button>
+			</div>
+        </form>
+      </div>
+    </div>
+  </div>
+<!-- /form modal -->     
+</div>
+
+
 							</div>
 
 							<!-- begin:: Main Content -->

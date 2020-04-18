@@ -42,7 +42,25 @@ function __construct()
   {
     
         $data['title'] = "Survey Responses";
-$this->load->view('skeleton_view', $data);
+        $this->load->view('skeleton_view', $data);
   }
+
+  public function get_users()
+  {
+     
+     $users_information = array();
+
+    if ($result = $this->db->query("SELECT * FROM users_information")) {
+
+    foreach ($result->result() as $key => $value) {
+        $users_information[] = $value;
+    }
+      echo json_encode($users_information);
+    }
+
+  }
+
+
+
   
 }

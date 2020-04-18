@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="my_app">
 
 	<!-- begin::Head -->
 	<head>
@@ -30,6 +30,22 @@
 		<link href="<?php echo back_skin; ?>assets/css/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
 		<link href="<?php echo back_skin; ?>assets/css/skins/brand/dark.css" rel="stylesheet" type="text/css" />
 		<link href="<?php echo back_skin; ?>assets/css/skins/aside/dark.css" rel="stylesheet" type="text/css" />
+
+
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.12.4.js"></script>
+
+
+<script src="<?php echo back_skin; ?>assets/js/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="<?php echo back_skin; ?>assets/js/dataTables/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="<?php echo back_skin; ?>assets/js/dataTables/dataTables.bootstrap.min.js"></script>
+
+<script type="text/javascript" src="<?php echo back_skin; ?>assets/js/angularjs/angular.min.js"></script>
+
+<script type="text/javascript" src="<?php echo back_skin; ?>assets/js/angularjs/angular-datatables.min.js"></script>
+<script type="text/javascript" src="<?php echo back_skin; ?>assets/js/angularjs/users.angular.js"></script>
+
+
 
 		<!--end::Layout Skins -->
 		<link rel="shortcut icon" href="<?php echo back_skin; ?>assets/media/logos/favicon.ico" />
