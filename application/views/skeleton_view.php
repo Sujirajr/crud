@@ -103,7 +103,7 @@
 		</div>
 	</div>
 	<div class="col-md-12">
-		<div class="add_panel" style="display: none">
+		<div class="add_panel" >
 			<a ng-click="addModal();" class="model_form btn btn-primary">
 				<i class="glyphicon glyphicon-plus"></i> Add User</a>
             <div class="clearfix"></div>
@@ -153,7 +153,7 @@
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>&nbsp;
           <h4 class="modal-title"><i class="icon-paragraph-justify2"></i>
           {{form_name}}</h4>
         </div>

@@ -60,6 +60,13 @@ function __construct()
 
   }
 
+  public function add_update_user()
+  {
+     
+    $view_data["done"] = $this->Welcome_Model->insert_update_user(); 
+
+
+  }
 
 
   
