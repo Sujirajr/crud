@@ -115,20 +115,38 @@
 				<thead>
 					<tr>
 						<th>S.No</th>
-						<th>Name</th>
+						<th>Customer Type</th>
+						<th>Customer Name</th>
+						<th>Address1</th>
+						<th>Address2</th>
+						<th>Country</th>
+						<th>City</th>
+						<th>Region</th>
+						<th>Zip</th>
 						<th>Email</th>
-						<th>Position</th>
-						<th>Data Of Birth</th>
+						<th>Office Phone</th>
+						<th>Mobile</th>
+						<th>Fax Number</th>
+						<th>Website</th>
 						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr ng-repeat="user in users_list">
 						<td>{{$index + 1}}</td>
-						<td>{{user.name}}</td>
-						<td>{{user.email}}</td>
-						<td>{{user.position}}</td>
-						<td>{{user.dob | date: "yyyy-MM-dd"}}</td>
+						<td>{{user.cust_type}}</td>
+						<td>{{user.cust_name}}</td>
+						<td>{{user.cust_add1}}</td>
+						<td>{{user.cust_add1}}</td>
+						<td>{{user.cust_country}}</td>
+						<td>{{user.cust_city}}</td>
+						<td>{{user.cust_region}}</td>
+						<td>{{user.cust_zip}}</td>
+						<td>{{user.cust_email}}</td>
+						<td>{{user.cust_officephone}}</td>
+						<td>{{user.cust_mobile}}</td>
+						<td>{{user.cust_fax}}</td>
+						<td>{{user.cust_website}}</td>
 						<td>
 							<a href="javascript:void(0);" ng-click="EditModal(user);"> 
 								<i class="glyphicon glyphicon-pencil"></i>
