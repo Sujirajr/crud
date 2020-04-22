@@ -95,9 +95,19 @@
 								
 
 
-<!---add table here--->
 
-<!---end table here--->
+<table class="table">
+	<thead>
+		<tr>
+			<th>jhdfkjdsgf</th>
+			<th>jhdfkjdsgf</th>
+		</tr>
+	</thead>
+	<tbody>
+		    <td>asd</td>
+		    <td>asd</td>
+	</tbody>
+</table>
 
 
 
