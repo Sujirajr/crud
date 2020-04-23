@@ -58,3 +58,33 @@ myapp.controller('users', function($scope,$http){
 		}
     };
 });
+
+
+
+
+ngOnInit(): void {
+    var that = this;
+
+    this.dtOptions = {
+        pagingType: 'full_numbers',
+        serverSide: true,
+        processing: true,
+        ajax: (dataTablesParameters: any, callback) => {
+            that.http
+                .post<DataTablesResponse>('/api/Persons', dataTablesParameters, {})
+                .subscribe(resp => {
+                    that.persons = resp.data;
+
+                    callback({
+                        recordsTotal: resp.recordsTotal,
+                        recordsFiltered: resp.recordsFiltered,
+                        data: [],
+                    });
+                });
+        },
+        columns: [
+            { data: "id" },
+            { data: "firstName" },
+            { data: "lastName" },
+        ],
+    };
