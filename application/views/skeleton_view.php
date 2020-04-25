@@ -99,7 +99,7 @@
 <table class="table">
 	<thead>
 		<tr>
-			<th>jhdfkjdsgf</th>
+			<th>jhdfkjdsgf  </th>
 			<th>jhdfkjdsgf</th>
 		</tr>
 	</thead>
