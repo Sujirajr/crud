@@ -91,6 +91,8 @@
 								
 							</div>
 						</div>
+						<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid" style="width:100%">
+
 						<div class="row">
 								<div class="alert alert-light alert-elevate" role="alert">
 								<div class="alert-icon" data-skin="brand" data-toggle="kt-tooltip" data-placement="top" title="" data-original-title="Help"></i></div>
@@ -241,7 +243,7 @@ User Information Add Details
 						<!-- end:: Content Head -->
 
 						<!-- begin:: Content -->
-						<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+						
 
 							<div class="alert alert-light alert-elevate" role="alert">
 								
