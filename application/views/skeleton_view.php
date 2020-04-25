@@ -1,6 +1,5 @@
-
- <?php $this->load->view("common/header"); ?>
-						
+<?php $this->load->view("common/header"); ?>
+			<link href="<?php echo back_skin; ?>assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />			
      	<div class="kt-subheader  kt-grid__item" id="kt_subheader">
 							<div class="kt-container  kt-container--fluid ">
 								<div class="kt-subheader__main">
@@ -14,7 +13,8 @@
 										</span>
 									</div>
 								</div>
-								<div class="kt-subheader__toolbar">
+
+               <div class="kt-subheader__toolbar">
 									<div class="kt-subheader__wrapper">
 										<a href="#" class="btn kt-subheader__btn-secondary">Today</a>
 										<a href="#" class="btn kt-subheader__btn-secondary">Month</a>
@@ -78,14 +78,166 @@
 														<a class="btn btn-clean btn-bold btn-sm kt-hidden" href="#" data-toggle="kt-tooltip" data-placement="right" title="Click to learn more...">Learn more</a>
 													</li>
 												</ul>
-
+	
 												<!--end::Nav-->
 											</div>
 										</div>
+										
 									</div>
 								</div>
+
+
+
+								
 							</div>
 						</div>
+						<div class="row">
+								<div class="alert alert-light alert-elevate" role="alert">
+								<div class="alert-icon" data-skin="brand" data-toggle="kt-tooltip" data-placement="top" title="" data-original-title="Help"></i></div>
+								<div class="alert-text"><span class="kt-font-success kt-font-boldest"></span>
+									 
+
+   <!-- start acourdium -->
+
+<div class="kt-portlet ">
+<div class="kt-portlet__head">
+<div class="kt-portlet__head-label">
+<h3 class="kt-portlet__head-title">
+User Information Add Details
+</h3>
+</div>
+</div>
+<div class="kt-portlet__body">
+<!--begin::Accordion-->
+<div class="accordion accordion-solid accordion-toggle-plus" id="accordionExample6">
+<div class="card">
+<div class="card-header" id="headingOne6">
+<div class="card-title collapsed" data-toggle="collapse" data-target="#collapseOne6" aria-expanded="false" aria-controls="collapseOne6">
+<i class="flaticon-pie-chart-1"></i> User Information Details
+</div>
+</div>
+<div id="collapseOne6" class="collapse" aria-labelledby="headingOne6" data-parent="#accordionExample6" style="">
+<div class="card-body">
+
+
+<div class="kt-portlet">
+<div class="kt-portlet__head">
+<div class="kt-portlet__head-label">
+<h3 class="kt-portlet__head-title">
+3 Columns Form Layout
+</h3>
+</div>
+</div>
+<!--begin::Form-->
+<form class="kt-form kt-form--label-right">
+<div class="kt-portlet__body">
+<div class="form-group row">
+<div class="col-lg-4">
+<label> Customer Type:</label>
+<input type="text" class="form-control" placeholder="Enter Customer Type " id="cust_type" name="cust_type">
+<span class="form-text text-muted">Please enter your  Type </span>
+</div>
+<div class="col-lg-4">
+<label>Customer Name:</label>
+<input type="text" class="form-control" placeholder="Enter Customer Name" id="cust_name" name="cust_name">
+<span class="form-text text-muted">Please enter your  Name</span>
+</div>
+<div class="col-lg-4">
+<label>Customer Address:</label>
+<textarea class="form-control edited" rows="1" id="cust_add1" name="cust_add1" placeholder="Enter Your Address"></textarea>
+
+<span class="form-text text-muted">Please enter your  Address</span>
+</div>
+</div>  
+<div class="form-group row">
+<div class="col-lg-4">
+<label class=""> Customer Address2:</label>
+<textarea class="form-control edited" rows="1" id="cust_add2" name="cust_add2" placeholder="Enter Your Address"></textarea>
+<span class="form-text text-muted">Please enter your  Address2 </span>
+</div>
+<div class="col-lg-4">
+<label>Customer Country :</label>
+<input type="text" class="form-control" placeholder="Enter Customer Country" id="cust_country" name="cust_country">
+
+<span class="form-text text-muted">Please enter your  Country</span>
+</div>
+<div class="col-lg-4">
+<label>Customer City:</label>
+<input type="text" class="form-control" placeholder="Enter  City" id="cust_city" name="cust_city">
+<span class="form-text text-muted">Please enter your City </span>
+</div>
+</div>  
+<div class="form-group row">
+<div class="col-lg-4">
+<label>Customer Region:</label>
+<input type="text" class="form-control" placeholder="Enter Customer Region " id="cust_region" name="cust_region">
+<span class="form-text text-muted">Please enter  Region</span>
+</div>
+<div class="col-lg-4">
+<label class="">Customer Zip:</label>
+<input type="text" class="form-control" placeholder="Enter Customer  Zip"id="cust_zip" name="cust_zip">
+<span class="form-text text-muted">Please enter   Zip</span>
+</div>
+<div class="col-lg-4">
+<label>Customer Email:</label>
+<input type="text" class="form-control" placeholder="Enter Customer  Email" id="cust_email" name="cust_email">
+<span class="form-text text-muted">Please enter your  Email</span>
+</div>
+</div>  
+
+<div class="form-group row">
+<div class="col-lg-4">
+<label>Customer Office Phone:</label>
+<input type="text" class="form-control" placeholder="Enter Customer   Office Phone " id="cust_officephone" name="cust_officephone">
+<span class="form-text text-muted">Please enter your   Office Phone</span>
+</div>
+<div class="col-lg-4">
+<label class="">Customer  Mobile Number:</label>
+<input type="text" class="form-control" placeholder="Enter  Customer  Mobile Number" id="cust_mobile" name="cust_mobile">
+<span class="form-text text-muted">Please enter your   Mobile Number </span>
+</div>
+<div class="col-lg-4">
+<label>Customer Fax:</label>
+<input type="text" class="form-control" placeholder="Enter Customer Fax" id="cust_fax" name="cust_fax" >
+<span class="form-text text-muted">Please enter  your Fax</span>
+</div>
+</div> 
+
+<div class="form-group row">
+<div class="col-lg-4">
+<label>Customer Website:</label>
+<input type="text" class="form-control" placeholder="Enter Customer Website" id="cust_website" name="cust_website">
+<span class="form-text text-muted">Please enter your Website</span>
+</div>
+</div>  
+ </div>
+ <div class="kt-portlet__foot">
+<div class="kt-form__actions">
+<div class="row">
+<div class="col-lg-4"></div>
+<div class="col-lg-8">
+<button type="submit" class="btn btn-primary float-right mr-2" id="Customerdetail_submit">Submit</button>
+
+<button type="reset" class="btn btn-secondary float-right mr-2">Cancel</button></div>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+</div>
+</div>
+</div>
+</form>
+<!--end::Form-->
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--end::Accordion-->
+</div>
+
+						<!-- end:: acourdium  -->
+
+								</div>
+							</div>
+							</div>
 						<!-- end:: Content Head -->
 
 						<!-- begin:: Content -->
@@ -93,35 +245,60 @@
 
 							<div class="alert alert-light alert-elevate" role="alert">
 								
+<div ng-controller="users" data-ng-init="usersInformation()" class="container">
+	<div class="col-md-12">
+		<div>
+			
+		</div>
+	</div>
+	<div class="col-md-12">
+		<div class="add_panel" style="display: none">
+			<a ng-click="addModal();" class="model_form btn btn-primary">
+				<i class="glyphicon glyphicon-plus"></i> Add User</a>
+            <div class="clearfix"></div>
+		</div>
+		<div class="table-responsive">
+		
+					    <table id="userdetails_list" class="table table-no-border" cellspacing="0" width="100%" style="text-align: left">
 
-
-
-<table class="table">
-	<thead>
-		<tr>
-			<th>jhdfkjdsgf  </th>
-			<th>jhdfkjdsgf</th>
-		</tr>
-	</thead>
-	<tbody>
-		    <td>asd</td>
-		    <td>asd</td>
-	</tbody>
-</table>
-
-
-
-
-
-
-							</div>
+				<thead>
+					<tr>
+						<th>S.No</th>
+						<th>Customer Type</th>
+						<th>Customer Name</th>
+						<th>Address1</th>
+						<th>Address2</th>
+						<th>Country</th>
+						<th>City</th>
+						<th>Region</th>
+						<th>Zip</th>
+						<th>Email</th>
+						<th>Office Phone</th>
+						<th>Mobile</th>
+						<th>Fax Number</th>
+						<th>Website</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+				
+			</table>
+		</div>
+		</div>
+    
+    
+<!-- Form modal -->
+ 
+<!-- /form modal -->     
+</div>
+	</div>
 
 							<!-- begin:: Main Content -->
-
-
 
 							<!-- End:: Main Content -->
 						
 
 						<?php  $this->load->view("common/footer"); ?>
 
+<script src="<?php echo back_skin; ?>assets/customjs/usersdetails.js"></script>
+<script src="<?php echo back_skin; ?>assets/plugins/custom/datatables/jquery.dataTables.min.js"></script>
