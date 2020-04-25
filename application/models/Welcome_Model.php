@@ -117,6 +117,29 @@ public function get_statusdone()
         return $query->result();
      }
 
+     public function insert_update_user()
+    {
+        $ajax_data = json_decode(file_get_contents('php://input'), true);
+        $name       = $db->real_escape_string($ajax_data['name']);
+        $email      = $db->real_escape_string($ajax_data['email']);
+        $position   = $db->real_escape_string($ajax_data['position']);
+        $date       = new DateTime($db->real_escape_string($ajax_data['dob']));
+        $user_dob   = $date->format('Y-m-d');
+        $id         = (@$ajax_data['id']!="") ? $db->real_escape_string(@$ajax_data['id']) : '';
+        if($id!="") :
+            $query = " UPDATE users_information SET name= '$name', email='$email',
+             position='$position',dob='$user_dob' WHERE id=$id";
+            $msg = "Successfully Updated Your Record";
+        else: 
+            $query = " INSERT INTO users_information SET name= '$name', email='$email',
+             position='$position',dob='$user_dob'";
+            $msg = "Successfully Inserted Your Record";         
+        endif;
+        $sql = $db->query($query);
+        echo $msg;
+
+    }    
+
      /*******************************************************************************
      * Author : Bincy                                                              *
      * Detail : count the table for User Information 
