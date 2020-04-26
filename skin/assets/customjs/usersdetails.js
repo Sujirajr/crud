@@ -10,6 +10,7 @@ $(document).ready(function() {
         "processing": true,
         "serverSide": true,
         "responsive": true,
+        "stripeClasses": [ 'odd-row', 'even-row' ],
         "order": [],
 
         "ajax": {
