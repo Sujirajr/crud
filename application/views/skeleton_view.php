@@ -235,15 +235,10 @@
 						<!-- begin:: Content -->
 						
 
-							<div class="alert alert-light alert-elevate" role="alert">
+							<div class="alert alert-light alert-elevate" style="width:100%" role="alert">
 								
 <div ng-controller="users" data-ng-init="usersInformation()" class="container">
-	<div class="col-md-12">
-		<div>
-			
-		</div>
-	</div>
-	<div class="col-md-12">
+	<div class="row">
 		<div class="add_panel" style="display: none">
 			<a ng-click="addModal();" class="model_form btn btn-primary">
 				<i class="glyphicon glyphicon-plus"></i> Add User</a>
@@ -296,3 +291,12 @@
 <script src="<?php echo back_skin; ?>assets/plugins/custom/datatables/jquery.dataTables.min.js"></script>
 <script src="<?php echo back_skin; ?>assets/js/pages/components/extended/sweetalert2.js" type="text/javascript"></script>
 
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js" type="text/javascript"></script>
+
+ 
+
+<style type="text/css">
+	.table-responsive {
+      overflow-x: inherit !important;
+     }
+</style>
