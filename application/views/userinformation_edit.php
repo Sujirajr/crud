@@ -122,44 +122,24 @@ User Information Edit Details
 </h3>
 </div>
 </div>
-  <?php
-foreach ($user_information_edit as $key => $value) {
-// print_r($user_information_edit);
-                                        $edit_id      = $value->id;
-                                        $cust_type    = $value->cust_type;
-
-                                      	$cust_name    = $value->cust_name;
-                                      	$cust_add1    = $value->cust_add1;
-                                      	
-                                      	$cust_add2    = $value->cust_add2;
-                                      	$cust_country = $value->cust_country;
-                                      	$cust_city    = $value->cust_city;
-                                      	$cust_region  = $value->cust_region;
-                                      	$cust_zip     = $value->cust_zip;
-                                      	$cust_email   = $value->cust_email;	
-                                        $cust_officephone = $value->cust_officephone;	$cust_mobile  = $value->cust_mobile;	
-                                        $cust_fax     = $value->cust_fax;	
-                                        $cust_website = $value->cust_website;	
-	
-}
-?> 
+ 
 <!--begin::Form-->
 <form class="kt-form kt-form--label-right">
 <div class="kt-portlet__body">
 <div class="form-group row">
 <div class="col-lg-4">
 <label> Customer Type:</label>
-<input type="text" class="form-control" placeholder="Enter Customer Type " id="edit_type" name="edit_type" value="<?php echo $cust_type; ?>">
+<input type="text" class="form-control" placeholder="Enter Customer Type " id="edit_type" name="edit_type" >
 <span class="form-text text-muted">Please enter your  Type </span>
 </div>
 <div class="col-lg-4">
 <label>Customer Name:</label>
-<input type="text" class="form-control" placeholder="Enter Customer Name" id="edit_name" name="edit_name" value="<?php echo $cust_name; ?>">
+<input type="text" class="form-control" placeholder="Enter Customer Name" id="edit_name" name="edit_name" >
 <span class="form-text text-muted">Please enter your  Name</span>
 </div>
 <div class="col-lg-4">
 <label>Customer Address:</label>
-<textarea class="form-control edited" rows="1" id="edit_addr1" name="edit_addr1" placeholder="Enter Your Address" ><?php echo $cust_add1; ?></textarea>
+<textarea class="form-control edited" rows="1" id="edit_addr1" name="edit_addr1" placeholder="Enter Your Address" ></textarea>
 
 <span class="form-text text-muted">Please enter your  Address</span>
 </div>
@@ -167,35 +147,35 @@ foreach ($user_information_edit as $key => $value) {
 <div class="form-group row">
 <div class="col-lg-4">
 <label class=""> Customer Address2:</label>
-<textarea class="form-control edited" rows="1" id="edit_addr2" name="edit_addr2"placeholder="Enter Your Address" ><?php echo $cust_add2; ?></textarea>
+<textarea class="form-control edited" rows="1" id="edit_addr2" name="edit_addr2"placeholder="Enter Your Address" ></textarea>
 <span class="form-text text-muted">Please enter your  Address2 </span>
 </div>
 <div class="col-lg-4">
 <label>Customer Country :</label>
-<input type="text" class="form-control" placeholder="Enter Customer Country" id="edit_country" name="edit_country" value="<?php echo $cust_country; ?>">
+<input type="text" class="form-control" placeholder="Enter Customer Country" id="edit_country" name="edit_country" >
 
 <span class="form-text text-muted">Please enter your  Country</span>
 </div>
 <div class="col-lg-4">
 <label>Customer City:</label>
-<input type="text" class="form-control" placeholder="Enter  City" id="edit_city" name="edit_city" value="<?php echo $cust_city; ?>">
+<input type="text" class="form-control" placeholder="Enter  City" id="edit_city" name="edit_city" >
 <span class="form-text text-muted">Please enter your City </span>
 </div>
 </div>  
 <div class="form-group row">
 <div class="col-lg-4">
 <label>Customer Region:</label>
-<input type="text" class="form-control" placeholder="Enter Customer Region " id="edit_region" name="edit_region" value="<?php echo $cust_region; ?>">
+<input type="text" class="form-control" placeholder="Enter Customer Region " id="edit_region" name="edit_region" >
 <span class="form-text text-muted">Please enter  Region</span>
 </div>
 <div class="col-lg-4">
 <label class="">Customer Zip:</label>
-<input type="text" class="form-control" placeholder="Enter Customer  Zip"id="edit_zip" name="edit_zip" value="<?php echo $cust_zip; ?>">
+<input type="text" class="form-control" placeholder="Enter Customer  Zip"id="edit_zip" name="edit_zip" >
 <span class="form-text text-muted">Please enter   Zip</span>
 </div>
 <div class="col-lg-4">
 <label>Customer Email:</label>
-<input type="text" class="form-control" placeholder="Enter Customer  Email" id="edit_email" name="edit_email" value="<?php echo $cust_email; ?>">
+<input type="text" class="form-control" placeholder="Enter Customer  Email" id="edit_email" name="edit_email" >
 <span class="form-text text-muted">Please enter your  Email</span>
 </div>
 </div>  
@@ -203,17 +183,17 @@ foreach ($user_information_edit as $key => $value) {
 <div class="form-group row">
 <div class="col-lg-4">
 <label>Customer Office Phone:</label>
-<input type="text" class="form-control" placeholder="Enter Customer   Office Phone " id="edit_officephone" name="edit_officephone" value="<?php echo $cust_officephone; ?>">
+<input type="text" class="form-control" placeholder="Enter Customer   Office Phone " id="edit_officephone" name="edit_officephone" >
 <span class="form-text text-muted">Please enter your   Office Phone</span>
 </div>
 <div class="col-lg-4">
 <label class="">Customer  Mobile Number:</label>
-<input type="text" class="form-control" placeholder="Enter  Customer  Mobile Number" id="edit_mobile" name="edit_mobile" value="<?php echo $cust_mobile; ?>">
+<input type="text" class="form-control" placeholder="Enter  Customer  Mobile Number" id="edit_mobile" name="edit_mobile" >
 <span class="form-text text-muted">Please enter your   Mobile Number </span>
 </div>
 <div class="col-lg-4">
 <label>Customer Fax:</label>
-<input type="text" class="form-control" placeholder="Enter Customer Fax" id="edit_fax" name="edit_fax" value="<?php echo $cust_fax; ?>">
+<input type="text" class="form-control" placeholder="Enter Customer Fax" id="edit_fax" name="edit_fax" >
 <span class="form-text text-muted">Please enter  your Fax</span>
 </div>
 </div> 
@@ -221,7 +201,7 @@ foreach ($user_information_edit as $key => $value) {
 <div class="form-group row">
 <div class="col-lg-4">
 <label>Customer Website:</label>
-<input type="text" class="form-control" placeholder="Enter Customer Website" id="edit_website" name="edit_website" value="<?php echo $cust_website; ?>">
+<input type="text" class="form-control" placeholder="Enter Customer Website" id="edit_website" name="edit_website" >
 <span class="form-text text-muted">Please enter your Website</span>
 </div>
 </div>  
@@ -231,7 +211,7 @@ foreach ($user_information_edit as $key => $value) {
 <div class="row">
 <div class="col-lg-4"></div>
 <div class="col-lg-8">
-<input type="hidden" name="edit_id" id="edit_id" value="<?php echo $edit_id; ?>">
+<input type="text" name="edit_id" id="edit_id" value="<?php echo $_REQUEST['edit_id']; ?>">
 <button type="submit" class="btn btn-primary float-right mr-2" id="Customerdetail_update">Update</button>
 
 <button type="reset" class="btn btn-secondary float-right mr-2">Cancel</button></div>
