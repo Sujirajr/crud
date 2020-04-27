@@ -90,28 +90,22 @@
 						<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid" style="width:100%">
 
 						<div class="row">
-								<div class="alert alert-light alert-elevate" role="alert">
-								<div class="alert-icon" data-skin="brand" data-toggle="kt-tooltip" data-placement="top" title="" data-original-title="Help"></i></div>
+								<div class="alert alert-light alert-elevate" role="alert" style="width:100%">
+								
 								<div class="alert-text"><span class="kt-font-success kt-font-boldest"></span>
 									 
 
    <!-- start acourdium -->
 
-<div class="kt-portlet ">
-<div class="kt-portlet__head">
-<div class="kt-portlet__head-label">
-<h3 class="kt-portlet__head-title">
-User Information Add Details
-</h3>
-</div>
-</div>
-<div class="kt-portlet__body">
+<div class="kt-portlet " style="margin-bottom: 0px !important;">
+
+<div class="kt-portlet__body" style="padding: 0px !important;">
 <!--begin::Accordion-->
 <div class="accordion accordion-solid accordion-toggle-plus" id="accordionExample6">
 <div class="card">
 <div class="card-header" id="headingOne6">
 <div class="card-title collapsed" data-toggle="collapse" data-target="#collapseOne6" aria-expanded="false" aria-controls="collapseOne6">
-<i class="flaticon-pie-chart-1"></i> User Information Details
+<i class="flaticon-pie-chart-1"></i> User Information Add Details
 </div>
 </div>
 <div id="collapseOne6" class="collapse" aria-labelledby="headingOne6" data-parent="#accordionExample6" style="">
@@ -245,15 +239,10 @@ User Information Add Details
 						<!-- begin:: Content -->
 						
 
-							<div class="alert alert-light alert-elevate" role="alert">
+							<div class="alert alert-light alert-elevate" style="width:100%" role="alert">
 								
 <div ng-controller="users" data-ng-init="usersInformation()" class="container">
-	<div class="col-md-12">
-		<div>
-			
-		</div>
-	</div>
-	<div class="col-md-12">
+	<div class="row">
 		<div class="add_panel" style="display: none">
 			<a ng-click="addModal();" class="model_form btn btn-primary">
 				<i class="glyphicon glyphicon-plus"></i> Add User</a>
@@ -306,3 +295,15 @@ User Information Add Details
 <script src="<?php echo back_skin; ?>assets/plugins/custom/datatables/jquery.dataTables.min.js"></script>
 <script src="<?php echo back_skin; ?>assets/js/pages/components/extended/sweetalert2.js" type="text/javascript"></script>
 
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js" type="text/javascript"></script>
+
+ 
+
+<style type="text/css">
+	.table-responsive {
+      overflow-x: inherit !important;
+     }
+     .odd-row{
+     	background-color: #0097ff14;
+     }
+</style>
