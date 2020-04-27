@@ -69,7 +69,7 @@ class Welcome_Model extends CI_Model
 
      }
 
-public function get_statusdone()
+    public function get_statusdone()
      {
         $this->db->select('key_name as id,title,class');
         $this->db->from('qrecruitment_process_status');
@@ -138,7 +138,27 @@ public function get_statusdone()
         $sql = $db->query($query);
         echo $msg;
 
-    }    
+    }  
+
+    /*******************************************************************************
+     * Author : Bincy                                                              *
+     * Detail : User Information deletion
+     * Date   : 24-04-2020                                                         *
+     *******************************************************************************/ 
+
+    public function Userdetaildelete()
+    {
+        $data = array(
+                'del_flag' => 0
+        );
+
+     $id=$this->input->post('id');
+     $this->db->where('id', $id);
+     $result=$this->db->update('users_information',$data);
+
+    return $result;
+    
+    }
 
      /*******************************************************************************
      * Author : Bincy                                                              *
@@ -160,6 +180,15 @@ public function get_statusdone()
         $query = $this->db->get();
         return $query->num_rows();
     }
+
+    public function get_userinformation_edit($id)
+    {
+        $this->db->select('*');
+        $this->db->from('users_information');
+        $this->db->where('id',$id);
+        $query = $this->db->get();
+        return $query->result();
+    }
     
     /*******************************************************************************
      * Author : Bincy                                                              *
@@ -180,6 +209,45 @@ public function get_statusdone()
         $query = $this->db->get();
         return $query->result();
     } 
+     /*******************************************************************************
+     * Author : Bincy                                                              *
+     * Detail : update for User Information 
+     * Date   : 24-04-2020                                                         *
+     *******************************************************************************/
+
+    public function user_updates(){
+        $id              =$this->input->post('edit_id');
+        $cust_type       =$this->input->post('edit_type');
+        $cust_name       =$this->input->post('edit_name');
+        $cust_add1       =$this->input->post('edit_addr1');
+        $cust_add2       =$this->input->post('edit_addr2');
+        $cust_country    =$this->input->post('edit_country');
+        $cust_city       =$this->input->post('edit_city');
+        $cust_region     =$this->input->post('edit_region');
+        $cust_zip        =$this->input->post('edit_zip');
+        $cust_email      =$this->input->post('edit_email');
+        $cust_officephone=$this->input->post('edit_officephone');
+        $cust_mobile     =$this->input->post('edit_mobile');
+        $cust_fax        =$this->input->post('edit_fax');
+        $cust_website    =$this->input->post('edit_website');
+        $this->db->set('edit_type', $cust_type);
+        $this->db->set('edit_name', $cust_name);
+        $this->db->set('edit_addr1', $cust_add1);
+        $this->db->set('edit_addr2', $cust_add2);
+        $this->db->set('edit_country', $cust_country);
+        $this->db->set('edit_city', $cust_city);
+        $this->db->set('edit_region', $cust_region);
+        $this->db->set('edit_zip', $cust_zip);
+        $this->db->set('edit_email', $cust_email);
+        $this->db->set('edit_officephone', $cust_officephone);
+        $this->db->set('edit_mobile', $cust_mobile);
+        $this->db->set('edit_fax', $cust_fax);
+        $this->db->set('edit_website', $cust_website);
+        $this->db->where('id', $id);
+        $result=$this->db->update('users_information');
+        return $result; 
+    }
+
     /*******************************************************************************
      * Author : Bincy                                                              *
      * Detail : User Information pagination
@@ -270,8 +338,13 @@ public function get_statusdone()
  
 }
 
+    /*******************************************************************************
+     * Author : Bincy                                                              *
+     * Detail : User Information save
+     * Date   : 24-04-2020                                                         *
+     *******************************************************************************/
 
-public function Userdetailsave(){
+      public function Userdetailsave(){
         $data  = array( 
                    'cust_type'        => $this->input->post('cust_type'), 
                    'cust_name'        => $this->input->post('cust_name'),        

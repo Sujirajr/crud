@@ -99,7 +99,7 @@
 <div class="kt-portlet__head">
 <div class="kt-portlet__head-label">
 <h3 class="kt-portlet__head-title">
-User Information Add Details
+User Information Edit Details
 </h3>
 </div>
 </div>
@@ -114,8 +114,6 @@ User Information Add Details
 </div>
 <div id="collapseOne6" class="collapse" aria-labelledby="headingOne6" data-parent="#accordionExample6" style="">
 <div class="card-body">
-
-
 <div class="kt-portlet">
 <div class="kt-portlet__head">
 <div class="kt-portlet__head-label">
@@ -124,23 +122,44 @@ User Information Add Details
 </h3>
 </div>
 </div>
+  <?php
+foreach ($user_information_edit as $key => $value) {
+// print_r($user_information_edit);
+                                        $edit_id      = $value->id;
+                                        $cust_type    = $value->cust_type;
+
+                                      	$cust_name    = $value->cust_name;
+                                      	$cust_add1    = $value->cust_add1;
+                                      	
+                                      	$cust_add2    = $value->cust_add2;
+                                      	$cust_country = $value->cust_country;
+                                      	$cust_city    = $value->cust_city;
+                                      	$cust_region  = $value->cust_region;
+                                      	$cust_zip     = $value->cust_zip;
+                                      	$cust_email   = $value->cust_email;	
+                                        $cust_officephone = $value->cust_officephone;	$cust_mobile  = $value->cust_mobile;	
+                                        $cust_fax     = $value->cust_fax;	
+                                        $cust_website = $value->cust_website;	
+	
+}
+?> 
 <!--begin::Form-->
 <form class="kt-form kt-form--label-right">
 <div class="kt-portlet__body">
 <div class="form-group row">
 <div class="col-lg-4">
 <label> Customer Type:</label>
-<input type="text" class="form-control" placeholder="Enter Customer Type " id="cust_type" name="cust_type">
+<input type="text" class="form-control" placeholder="Enter Customer Type " id="edit_type" name="edit_type" value="<?php echo $cust_type; ?>">
 <span class="form-text text-muted">Please enter your  Type </span>
 </div>
 <div class="col-lg-4">
 <label>Customer Name:</label>
-<input type="text" class="form-control" placeholder="Enter Customer Name" id="cust_name" name="cust_name">
+<input type="text" class="form-control" placeholder="Enter Customer Name" id="edit_name" name="edit_name" value="<?php echo $cust_name; ?>">
 <span class="form-text text-muted">Please enter your  Name</span>
 </div>
 <div class="col-lg-4">
 <label>Customer Address:</label>
-<textarea class="form-control edited" rows="1" id="cust_add1" name="cust_add1" placeholder="Enter Your Address"></textarea>
+<textarea class="form-control edited" rows="1" id="edit_addr1" name="edit_addr1" placeholder="Enter Your Address" ><?php echo $cust_add1; ?></textarea>
 
 <span class="form-text text-muted">Please enter your  Address</span>
 </div>
@@ -148,35 +167,35 @@ User Information Add Details
 <div class="form-group row">
 <div class="col-lg-4">
 <label class=""> Customer Address2:</label>
-<textarea class="form-control edited" rows="1" id="cust_add2" name="cust_add2" placeholder="Enter Your Address"></textarea>
+<textarea class="form-control edited" rows="1" id="edit_addr2" name="edit_addr2"placeholder="Enter Your Address" ><?php echo $cust_add2; ?></textarea>
 <span class="form-text text-muted">Please enter your  Address2 </span>
 </div>
 <div class="col-lg-4">
 <label>Customer Country :</label>
-<input type="text" class="form-control" placeholder="Enter Customer Country" id="cust_country" name="cust_country">
+<input type="text" class="form-control" placeholder="Enter Customer Country" id="edit_country" name="edit_country" value="<?php echo $cust_country; ?>">
 
 <span class="form-text text-muted">Please enter your  Country</span>
 </div>
 <div class="col-lg-4">
 <label>Customer City:</label>
-<input type="text" class="form-control" placeholder="Enter  City" id="cust_city" name="cust_city">
+<input type="text" class="form-control" placeholder="Enter  City" id="edit_city" name="edit_city" value="<?php echo $cust_city; ?>">
 <span class="form-text text-muted">Please enter your City </span>
 </div>
 </div>  
 <div class="form-group row">
 <div class="col-lg-4">
 <label>Customer Region:</label>
-<input type="text" class="form-control" placeholder="Enter Customer Region " id="cust_region" name="cust_region">
+<input type="text" class="form-control" placeholder="Enter Customer Region " id="edit_region" name="edit_region" value="<?php echo $cust_region; ?>">
 <span class="form-text text-muted">Please enter  Region</span>
 </div>
 <div class="col-lg-4">
 <label class="">Customer Zip:</label>
-<input type="text" class="form-control" placeholder="Enter Customer  Zip"id="cust_zip" name="cust_zip">
+<input type="text" class="form-control" placeholder="Enter Customer  Zip"id="edit_zip" name="edit_zip" value="<?php echo $cust_zip; ?>">
 <span class="form-text text-muted">Please enter   Zip</span>
 </div>
 <div class="col-lg-4">
 <label>Customer Email:</label>
-<input type="text" class="form-control" placeholder="Enter Customer  Email" id="cust_email" name="cust_email">
+<input type="text" class="form-control" placeholder="Enter Customer  Email" id="edit_email" name="edit_email" value="<?php echo $cust_email; ?>">
 <span class="form-text text-muted">Please enter your  Email</span>
 </div>
 </div>  
@@ -184,17 +203,17 @@ User Information Add Details
 <div class="form-group row">
 <div class="col-lg-4">
 <label>Customer Office Phone:</label>
-<input type="text" class="form-control" placeholder="Enter Customer   Office Phone " id="cust_officephone" name="cust_officephone">
+<input type="text" class="form-control" placeholder="Enter Customer   Office Phone " id="edit_officephone" name="edit_officephone" value="<?php echo $cust_officephone; ?>">
 <span class="form-text text-muted">Please enter your   Office Phone</span>
 </div>
 <div class="col-lg-4">
 <label class="">Customer  Mobile Number:</label>
-<input type="text" class="form-control" placeholder="Enter  Customer  Mobile Number" id="cust_mobile" name="cust_mobile">
+<input type="text" class="form-control" placeholder="Enter  Customer  Mobile Number" id="edit_mobile" name="edit_mobile" value="<?php echo $cust_mobile; ?>">
 <span class="form-text text-muted">Please enter your   Mobile Number </span>
 </div>
 <div class="col-lg-4">
 <label>Customer Fax:</label>
-<input type="text" class="form-control" placeholder="Enter Customer Fax" id="cust_fax" name="cust_fax" >
+<input type="text" class="form-control" placeholder="Enter Customer Fax" id="edit_fax" name="edit_fax" value="<?php echo $cust_fax; ?>">
 <span class="form-text text-muted">Please enter  your Fax</span>
 </div>
 </div> 
@@ -202,7 +221,7 @@ User Information Add Details
 <div class="form-group row">
 <div class="col-lg-4">
 <label>Customer Website:</label>
-<input type="text" class="form-control" placeholder="Enter Customer Website" id="cust_website" name="cust_website">
+<input type="text" class="form-control" placeholder="Enter Customer Website" id="edit_website" name="edit_website" value="<?php echo $cust_website; ?>">
 <span class="form-text text-muted">Please enter your Website</span>
 </div>
 </div>  
@@ -212,7 +231,8 @@ User Information Add Details
 <div class="row">
 <div class="col-lg-4"></div>
 <div class="col-lg-8">
-<button type="submit" class="btn btn-primary float-right mr-2" id="Customerdetail_submit">Submit</button>
+<input type="hidden" name="edit_id" id="edit_id" value="<?php echo $edit_id; ?>">
+<button type="submit" class="btn btn-primary float-right mr-2" id="Customerdetail_update">Update</button>
 
 <button type="reset" class="btn btn-secondary float-right mr-2">Cancel</button></div>
 <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
@@ -239,55 +259,7 @@ User Information Add Details
 						<!-- begin:: Content -->
 						<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
 
-							<div class="alert alert-light alert-elevate" role="alert">
-								
-<div ng-controller="users" data-ng-init="usersInformation()" class="container">
-	<div class="col-md-12">
-		<div>
-			
-		</div>
-	</div>
-	<div class="col-md-12">
-		<div class="add_panel" style="display: none">
-			<a ng-click="addModal();" class="model_form btn btn-primary">
-				<i class="glyphicon glyphicon-plus"></i> Add User</a>
-            <div class="clearfix"></div>
-		</div>
-		<div class="table-responsive">
-		
-					    <table id="userdetails_list" class="table table-no-border" cellspacing="0" width="100%" style="text-align: left">
-
-				<thead>
-					<tr>
-						<th>S.No</th>
-						<th>Customer Type</th>
-						<th>Customer Name</th>
-						<th>Address1</th>
-						<th>Address2</th>
-						<th>Country</th>
-						<th>City</th>
-						<th>Region</th>
-						<th>Zip</th>
-						<th>Email</th>
-						<th>Office Phone</th>
-						<th>Mobile</th>
-						<th>Fax Number</th>
-						<th>Website</th>
-						<th>Action</th>
-					</tr>
-				</thead>
-				<tbody></tbody>
-				
-			</table>
-		</div>
-		</div>
-    
-    
-<!-- Form modal -->
- 
-<!-- /form modal -->     
-</div>
-	</div>
+						
 
 							<!-- begin:: Main Content -->
 
