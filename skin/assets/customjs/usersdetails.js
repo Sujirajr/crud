@@ -107,25 +107,46 @@ $(document).ready(function() {
      type: 'success'
    });
  });
+  
+  
+  $(document).on('click','.Customerdetail_submit',function(e) {
+    alert("F");
 
-$('.kt_update_usersinformation').on('click',function(){
-    $("#edit_id").val($(this).data('id'));
-    $("#edit_type").val($(this).data('cust_type'));
-    $("#edit_name").val($(this).data('cust_name'));
-    $("#edit_addr1").val($(this).data('cust_add1'));
-    $("#edit_addr2").val($(this).data('cust_add2'));
-    $("#edit_country").val($(this).data('cust_country'));
-    $("#edit_city").val($(this).data('cust_city'));
-    $("#edit_region").val($(this).data('cust_region'));
-    $("#edit_zip").val($(this).data('cust_zip'));
-    $("#edit_email").val($(this).data('cust_email'));
-    $("#edit_officephone").val($(this).data('cust_officephone'));
-    $("#edit_mobile").val($(this).data('cust_mobile'));
-    $("#edit_fax").val($(this).data('cust_fax'));
-    $("#edit_website").val($(this).data('cust_website'));
+
+    // var id=$(this).attr("id");
+    // var cust_type=$(this).attr("cust_type");
+    // var cust_name=$(this).attr("cust_name");
+    // var cust_add1=$(this).attr("cust_add1");
+    // var cust_add2=$(this).attr("cust_add2");
+    // var cust_country=$(this).attr("cust_country");
+    // var cust_city=$(this).attr("cust_city");
+    // var cust_region=$(this).attr("cust_region");
+    // var cust_zip=$(this).attr("cust_zip");
+    // var cust_email=$(this).attr("cust_email");
+    // var cust_officephone=$(this).attr("cust_officephone");
+    // var cust_mobile=$(this).attr("cust_mobile");
+    // var cust_fax=$(this).attr("cust_fax");
+    // var cust_website=$(this).attr("cust_website");
+
+
+
+    //             $('#id').val(id);
+
+    //             $('#cust_type').val(cust_type);
+    //             $('#cust_name').val(cust_name);
+    //             $('#cust_add1').val(cust_add1);
+    //             $('#cust_add2').val(cust_add2);
+    //             $('#cust_country').val(cust_country);
+    //             $('#cust_city').val(cust_city);
+    //             $('#cust_region').val(cust_region);
+    //             $('#cust_zip').val(cust_zip);
+    //             $('#cust_email').val(cust_email);
+    //             $('#cust_officephone').val(cust_officephone);
+    //             $('#cust_mobile').val(cust_mobile);
+    //             $('#cust_fax').val(cust_fax);
+    //             $('#cust_website').val(cust_website);
 
   });
-
 
 
 //user information edit 
@@ -169,9 +190,6 @@ $('.kt_update_usersinformation').on('click',function(){
     });
     return false;
   });
-
-
-
 //delete for userinformation
      $(document).on('click', '.kt_del_usersinformation', function () {
      var id = $(this).attr('id');
@@ -200,9 +218,6 @@ $('.kt_update_usersinformation').on('click',function(){
           }
         })
      });
-
-
-
 
 });
 

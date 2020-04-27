@@ -122,7 +122,7 @@
 </div>
 <!--begin::Form-->
 <form class="kt-form kt-form--label-right">
-<input type="text" name="id" value="<?php echo isset($user_information_edit[0]->id) ? $user_information_edit[0]->id : ''  ?>">
+<input type="text" id="id" name="id" value="<?php echo $_REQUEST['id']?>">
 <div class="kt-portlet__body">
 <div class="form-group row">
 <div class="col-lg-4">
@@ -209,11 +209,7 @@
 <div class="row">
 <div class="col-lg-4"></div>
 <div class="col-lg-8">
-<input type="text" name="edit_id" id="edit_id" value="<?php echo $_REQUEST['id']; ?>">
-
-<!-- <button type="submit" class="btn btn-primary float-right mr-2" id="Customerdetail_submit">Submit</button>
- --><button type="submit" id="Customerdetail_submit" class="btn blue"><?php echo isset($user_information_edit[0]->id) ? 'Update' : 'Submit' ?></button>
-
+<button type="submit" class="btn btn-primary float-right mr-2" id="Customerdetail_submit">Submit</button>
 <button type="reset" class="btn btn-secondary float-right mr-2">Cancel</button></div>
 <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
 </div>
@@ -255,6 +251,8 @@
 				<thead>
 					<tr>
 						<th>S.No</th>
+						<th>Action</th>
+
 						<th>Customer Type</th>
 						<th>Customer Name</th>
 						<th>Address1</th>
@@ -268,7 +266,6 @@
 						<th>Mobile</th>
 						<th>Fax Number</th>
 						<th>Website</th>
-						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody></tbody>

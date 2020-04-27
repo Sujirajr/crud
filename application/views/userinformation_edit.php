@@ -211,7 +211,7 @@ User Information Edit Details
 <div class="row">
 <div class="col-lg-4"></div>
 <div class="col-lg-8">
-<input type="text" name="edit_id" id="edit_id" value="<?php echo $_REQUEST['edit_id']; ?>">
+<input type="hidden" name="edit_id" id="edit_id" value="<?php echo $_REQUESTedit_id; ?>">
 <button type="submit" class="btn btn-primary float-right mr-2" id="Customerdetail_update">Update</button>
 
 <button type="reset" class="btn btn-secondary float-right mr-2">Cancel</button></div>
