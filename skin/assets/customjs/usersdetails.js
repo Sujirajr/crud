@@ -3,8 +3,34 @@
      * Detail : User Information save,update,delete
      * Date   : 24-04-2020                                                         *
      *******************************************************************************/
+
+
 $(document).ready(function() {
+
+  jQuery.validator.setDefaults({
+  debug: true,
+  success: "valid"
+});
+
+
     var table = $('#userdetails_list').DataTable({
+        "dom"       : 'Bfrtip',
+        "buttons": [
+            'copy',
+            'csv',
+            'excel',
+            'pdf',
+            {
+                extend: 'print',
+                text: 'Print all (not just selected)',
+                exportOptions: {
+                    modifier: {
+                        selected: null
+                    }
+                }
+            }
+        ],
+        "select": true,
         "pagingType": 'full_numbers',
         "iDisplayLength": 10,
         "processing": true,
@@ -26,10 +52,36 @@ $(document).ready(function() {
         },
         ],
 
+
     });
 
-// save new Customer details
+
   $(document).on('click', '#Customerdetail_submit', function(){
+
+         $('#user-form').validate(  {
+          rules: {
+            cust_type : "required",
+            cust_email: {
+              required: true,
+              email: true
+            },
+          },
+          messages: {
+            cust_type  : "Please specify your Customer Type",
+            cust_email : {
+              required: "We need your email address to contact you",
+              email: "Your email address must be in the format of name@domain.com"
+            }
+          }
+         });
+
+        
+        if (!$('#user-form').valid()) // check if form is valid
+        {
+           alert("hii");   
+           return false;
+        }
+
 
         var cust_type        = $('#cust_type').val();
         var cust_name        = $('#cust_name').val();
@@ -80,6 +132,14 @@ $(document).ready(function() {
                 $('#cust_fax').val("");
                 $('#cust_website').val("");
 
+          swal({
+            title: "Done",
+            text: " Submission Sucessfully ",
+            timer: 1500,
+            showConfirmButton: false,
+            type: 'success'
+          });
+
 
             }
         });
@@ -87,15 +147,9 @@ $(document).ready(function() {
     });
 
 //alert for submission
-  $(document).on('click', '#Customerdetail_submit', function(){
-   swal({
-     title: "Done",
-     text: " Submission Sucessfully ",
-     timer: 1500,
-      showConfirmButton: false,
-     type: 'success'
-   });
- });
+ //  $(document).on('click', '#Customerdetail_submit', function(){
+
+ // });
   
   //alert for update submission
   $(document).on('click', '#Customerdetail_update', function(){

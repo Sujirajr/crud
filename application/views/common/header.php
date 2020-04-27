@@ -40,9 +40,15 @@
 	<script type="text/javascript" src="<?php echo back_skin; ?>assets/js/dataTables/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="<?php echo back_skin; ?>assets/js/dataTables/dataTables.bootstrap.min.js"></script>
 
+    	<script src="<?php echo back_skin; ?>assets/lib/jquery.mockjax.js"></script>
+	<script src="<?php echo back_skin; ?>assets/lib/jquery.form.js"></script>
+	<script src="<?php echo back_skin; ?>assets/dist/jquery.validate.js"></script>
+
+
 <!-- <script type="text/javascript" src="<?php echo back_skin; ?>assets/js/angularjs/angular.min.js"></script> -->
 
-<script type="text/javascript" src="<?php echo back_skin; ?>assets/js/angularjs/angular-datatables.min.js"></script>
+<!-- <script type="text/javascript" src="<?php echo back_skin; ?>assets/js/angularjs/angular-datatables.min.js"></script> -->
+
 <!-- <script type="text/javascript" src="<?php echo back_skin; ?>assets/js/angularjs/users.angular.js"></script> -->
 
 
