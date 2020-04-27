@@ -86,20 +86,34 @@ $(document).ready(function() {
               required: true,
               email: true
             },
+            cust_name    : "required",
+            cust_zip     : "required",
+            cust_region  : "required",
+            cust_website : "required",
+            cust_mobile  : "required",
+
+
+
           },
           messages: {
             cust_type  : "Please specify your Customer Type",
             cust_email : {
               required: "We need your email address to contact you",
               email: "Your email address must be in the format of name@domain.com"
-            }
+            },
+            cust_mobile   : "Makes the element require a number",
+            cust_name     : "Please specify your Customer Name",
+            cust_zip      : "Makes the element require a number",
+            cust_region   : "Please specify your Customer Region",
+            cust_website  : "Please specify your Customer Website",
+
+
           }
          });
 
         
         if (!$('#user-form').valid()) // check if form is valid
         {
-           alert("hii");   
            return false;
         }
 
@@ -167,10 +181,6 @@ $(document).ready(function() {
         return false;
     });
 
-//alert for submission
- //  $(document).on('click', '#Customerdetail_submit', function(){
-
- // });
   
   //alert for update submission
   $(document).on('click', '#Customerdetail_update', function(){
@@ -183,9 +193,7 @@ $(document).ready(function() {
    });
  });
   
-    $(document).on('click','.Customerdetail_submit',function(){
-
-  // $(document).on('click','.Customerdetail_submit',function(e) {
+    $("#user-form").on('click','.Customerdetail_submit',function(){
     alert("F");
 
     $id=$("#id").val($(this).data('id'));
