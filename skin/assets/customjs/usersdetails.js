@@ -14,15 +14,36 @@ $(document).ready(function() {
 
 
     var table = $('#userdetails_list').DataTable({
-        "dom"       : 'Bfrtip',
+        "dom"        : 'Bfrtip',
+        "lengthMenu" : [
+            [ 10, 25, 50, -1 ],
+            [ '10 rows', '25 rows', '50 rows', 'Show all' ]
+        ],
         "buttons": [
-            'copy',
-            'csv',
-            'excel',
-            'pdf',
+            {
+             extend: 'pageLength',
+             className:'btn btn-danger btn-outline-brand btn-elevate btn-pill'  
+            },
+            {
+             extend: 'copy',
+             className:'btn btn-outline-brand btn-elevate btn-pill' 
+            },
+            {
+              extend: 'csv',
+              className:'btn btn-outline-brand btn-elevate btn-pill'
+            },
+            {
+              extend: 'excel',
+              className:'btn btn-outline-brand btn-elevate btn-pill'
+            },
+            { 
+              extend: 'pdf',
+              className:'btn btn-outline-brand btn-elevate btn-pill'
+            },
             {
                 extend: 'print',
                 text: 'Print all (not just selected)',
+                className:'btn btn-outline-brand btn-elevate btn-pill',
                 exportOptions: {
                     modifier: {
                         selected: null
