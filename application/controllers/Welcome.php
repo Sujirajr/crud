@@ -44,27 +44,15 @@ function __construct()
      *******************************************************************************/
     public function crud()
   {
-    
+        $data=array();
+        if(isset($_REQUEST['id']))
+        {
+        $id=$_REQUEST['id'];
+      }
         $data['title'] = "User Details";
         $this->load->view('skeleton_view', $data);
   }
-    /*******************************************************************************
-   * Author : Bincy                                                     *
-     * Detail :View page for User Information 
-     * Date   : 24-04-2020                                                         *
-     *******************************************************************************/
-
-   public function userinformation_edit()
-   {
-        $id=$this->input->post('id');
-        $data['title'] = "Edit User Information";
-        $data['user_information_edit'] =$this->Welcome_Model->get_userinformation_edit($id);
-//         print_r($data['user_information_edit'] );
-// exit();
-        
-     $this->load->view('userinformation_edit', $data);
-   }
-
+    
      /*******************************************************************************
      * Author : Bincy                                                              *
      * Detail : Table listing User Information 
@@ -80,6 +68,24 @@ function __construct()
             $no++;
             $row   = array();
             $row[] = $no;
+            $row[] = '<span style="overflow: visible; position: relative;    width: 80px;">
+                        <div class="dropdown"><a data-toggle="dropdown" class="btn btn-sm btn-clean btn-icon btn-icon-md">                                  
+                        <i class="flaticon-more-1"></i></a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                        <ul class="kt-nav">
+
+                        <a href="'.base_url().'welcome/crud?id='.$user_detail->id.'"><li class="kt-nav__item">
+                        <span class="kt-nav__link">
+                        <i class="kt-nav__link-icon flaticon2-contract"></i>
+                        <span class="kt-nav__link-text Customerdetail_submit">Edit</span>
+                        </span></li></a>
+                    
+                          <li class="kt-nav__item">
+                        <span class="kt-nav__link">
+                        <i class="kt-nav__link-icon flaticon2-trash"></i>                                               
+                        <span class="kt-nav__link-text kt_del_usersinformation" id='.$user_detail->id.' data-id='.$user_detail->id.'>Delete</span></span></li>
+
+                       </ul></div></div></span>';
             $row[] = $user_detail->cust_type;
             $row[] = $user_detail->cust_name;
             $row[] = $user_detail->cust_add1;
@@ -93,26 +99,7 @@ function __construct()
             $row[] = $user_detail->cust_mobile;
             $row[] = $user_detail->cust_fax;
             $row[] = $user_detail->cust_website;                     
-            $row[] = '<span style="overflow: visible; position: relative;    width: 80px;">
-                        <div class="dropdown"><a data-toggle="dropdown" class="btn btn-sm btn-clean btn-icon btn-icon-md">                                  
-                        <i class="flaticon-more-1"></i></a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                        <ul class="kt-nav">
-
-                        <a href="'.base_url().'welcome/userinformation_edit?id='.$user_detail->id.'"><li class="kt-nav__item">
-                        <span class="kt-nav__link">
-                        <i class="kt-nav__link-icon flaticon2-contract"></i>
-                        <span class="kt-nav__link-text">Edit</span>
-                        </span></li></a>
-                    
-                          
-                    
-                        <li class="kt-nav__item">
-                        <span class="kt-nav__link">
-                        <i class="kt-nav__link-icon flaticon2-trash"></i>                                               
-                        <span class="kt-nav__link-text kt_del_usersinformation" id='.$user_detail->id.' data-id='.$user_detail->id.'>Delete</span></span></li>
-
-                       </ul></div></div></span>';
+            
                       $data[] = $row;
         }
 

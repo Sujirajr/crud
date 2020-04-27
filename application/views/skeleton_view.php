@@ -121,7 +121,12 @@ Add New User
 </div>
 </div>
 <!--begin::Form-->
+<<<<<<< HEAD
 <form class="kt-form kt-form--label-right" id="user-form">
+=======
+<form class="kt-form kt-form--label-right">
+<input type="text" id="id" name="id" value="<?php echo $_REQUEST['id']?>">
+>>>>>>> 290d3143f8b278816af08140db208113a9a1b870
 <div class="kt-portlet__body">
 <div class="form-group row">
 <div class="col-lg-4">
@@ -208,9 +213,13 @@ Add New User
 <div class="row">
 <div class="col-lg-4"></div>
 <div class="col-lg-8">
+<<<<<<< HEAD
 				<input class="submit btn btn-primary float-right mr-2" id="Customerdetail_submit" type="submit" value="Login">
 <!-- <button type="submit" class="submit btn btn-primary float-right mr-2" id="Customerdetail_submit" value="Login">Submit</button> -->
 
+=======
+<button type="submit" class="btn btn-primary float-right mr-2" id="Customerdetail_submit">Submit</button>
+>>>>>>> 290d3143f8b278816af08140db208113a9a1b870
 <button type="reset" class="btn btn-secondary float-right mr-2">Cancel</button></div>
 <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
 </div>
@@ -252,6 +261,8 @@ Add New User
 				<thead>
 					<tr>
 						<th>S.No</th>
+						<th>Action</th>
+
 						<th>Customer Type</th>
 						<th>Customer Name</th>
 						<th>Address1</th>
@@ -265,7 +276,6 @@ Add New User
 						<th>Mobile</th>
 						<th>Fax Number</th>
 						<th>Website</th>
-						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody></tbody>

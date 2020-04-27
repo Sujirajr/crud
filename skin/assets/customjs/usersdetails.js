@@ -161,10 +161,51 @@ $(document).ready(function() {
      type: 'success'
    });
  });
+  
+  
+  $(document).on('click','.Customerdetail_submit',function(e) {
+    alert("F");
+
+
+    // var id=$(this).attr("id");
+    // var cust_type=$(this).attr("cust_type");
+    // var cust_name=$(this).attr("cust_name");
+    // var cust_add1=$(this).attr("cust_add1");
+    // var cust_add2=$(this).attr("cust_add2");
+    // var cust_country=$(this).attr("cust_country");
+    // var cust_city=$(this).attr("cust_city");
+    // var cust_region=$(this).attr("cust_region");
+    // var cust_zip=$(this).attr("cust_zip");
+    // var cust_email=$(this).attr("cust_email");
+    // var cust_officephone=$(this).attr("cust_officephone");
+    // var cust_mobile=$(this).attr("cust_mobile");
+    // var cust_fax=$(this).attr("cust_fax");
+    // var cust_website=$(this).attr("cust_website");
+
+
+
+    //             $('#id').val(id);
+
+    //             $('#cust_type').val(cust_type);
+    //             $('#cust_name').val(cust_name);
+    //             $('#cust_add1').val(cust_add1);
+    //             $('#cust_add2').val(cust_add2);
+    //             $('#cust_country').val(cust_country);
+    //             $('#cust_city').val(cust_city);
+    //             $('#cust_region').val(cust_region);
+    //             $('#cust_zip').val(cust_zip);
+    //             $('#cust_email').val(cust_email);
+    //             $('#cust_officephone').val(cust_officephone);
+    //             $('#cust_mobile').val(cust_mobile);
+    //             $('#cust_fax').val(cust_fax);
+    //             $('#cust_website').val(cust_website);
+
+  });
+
 
 //user information edit 
   $(document).on('click', '#Customerdetail_update', function(){
-        var user_Id          = $('#edit_id').val();
+        var id               = $('#edit_id').val();
         var cust_type        = $('#edit_type').val();
         var cust_name        = $('#edit_name').val();
         var cust_add1        = $('#edit_addr1').val();
@@ -183,7 +224,7 @@ $(document).ready(function() {
       type : "POST",
       url  : base_url+"welcome/user_information_edit",
       dataType : "JSON",
-      data : {id:user_Id,cust_type:cust_type,cust_name:cust_name,cust_add1:cust_add1,cust_add2:cust_add2,cust_country:cust_country,cust_city:cust_city,cust_region:cust_region,cust_zip:cust_zip,cust_email:cust_email,cust_officephone:cust_officephone,cust_mobile:cust_mobile,cust_fax:cust_fax,cust_website:cust_website},
+      data : {id:id,cust_type:cust_type,cust_name:cust_name,cust_add1:cust_add1,cust_add2:cust_add2,cust_country:cust_country,cust_city:cust_city,cust_region:cust_region,cust_zip:cust_zip,cust_email:cust_email,cust_officephone:cust_officephone,cust_mobile:cust_mobile,cust_fax:cust_fax,cust_website:cust_website},
       success: function(data){
         $("#edit_id").val("");
         $("#edit_type").val("");
@@ -203,9 +244,6 @@ $(document).ready(function() {
     });
     return false;
   });
-
-
-
 //delete for userinformation
      $(document).on('click', '.kt_del_usersinformation', function () {
      var id = $(this).attr('id');
@@ -234,9 +272,6 @@ $(document).ready(function() {
           }
         })
      });
-
-
-
 
 });
 
