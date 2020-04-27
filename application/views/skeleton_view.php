@@ -122,7 +122,7 @@
 </div>
 <!--begin::Form-->
 <form class="kt-form kt-form--label-right">
-<input type="text" id="id" name="id" value="<?php echo $_REQUEST['id']?>">
+<input type="hidden" id="id" name="id">
 <div class="kt-portlet__body">
 <div class="form-group row">
 <div class="col-lg-4">
@@ -209,8 +209,10 @@
 <div class="row">
 <div class="col-lg-4"></div>
 <div class="col-lg-8">
-<button type="submit" class="btn btn-primary float-right mr-2" id="Customerdetail_submit">Submit</button>
-<button type="reset" class="btn btn-secondary float-right mr-2">Cancel</button></div>
+	<button type="button" id="Customerdetail_submit" class="btn btn-secondary float-right mr-2 Updation_information"><?php echo isset($_REQUEST['id']) ? 'Update' : 'Submit' ?></button>
+<!-- <button type="submit" class="btn btn-primary float-right mr-2" id="Customerdetail_submit">Submit</button>
+ -->
+ <button type="reset" class="btn btn-secondary float-right mr-2">Cancel</button></div>
 <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
 </div>
 </div>
