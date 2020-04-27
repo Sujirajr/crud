@@ -183,9 +183,26 @@ $(document).ready(function() {
    });
  });
   
-  
-  $(document).on('click','.Customerdetail_submit',function(e) {
+    $(document).on('click','.Customerdetail_submit',function(){
+
+  // $(document).on('click','.Customerdetail_submit',function(e) {
     alert("F");
+
+    $id=$("#id").val($(this).data('id'));
+    $cust_type=$("#cust_type").val($(this).data('cust_type'));
+    $cust_name=$("#cust_name").val($(this).data('cust_name'));
+    $cust_add1=$("#cust_add1").val($(this).data('cust_add1'));
+    $cust_add2=$("#cust_add2").val($(this).data('cust_add2'));
+    $cust_country=$("#cust_country").val($(this).data('cust_country'));
+    $cust_city=$("#cust_city").val($(this).data('cust_city'));
+    $cust_region=$("#cust_region").val($(this).data('cust_region'));
+    $cust_zip=$("#cust_zip").val($(this).data('cust_zip'));
+   $cust_email= $("#cust_email").val($(this).data('cust_email'));
+    $cust_officephone=$("#cust_officephone").val($(this).data('cust_officephone'));
+    $cust_mobile=$("#cust_mobile").val($(this).data('cust_mobile'));
+    $cust_fax=$("#cust_fax").val($(this).data('cust_fax'));
+   $cust_website= $("#cust_website").val($(this).data('cust_website'));
+
 
 
     // var id=$(this).attr("id");
@@ -221,25 +238,68 @@ $(document).ready(function() {
     //             $('#cust_fax').val(cust_fax);
     //             $('#cust_website').val(cust_website);
 
+
+
+     $.ajax({
+            type : "POST",
+            url  : base_url+"welcome/user_information_click",
+            dataType : "JSON",
+            data : {
+                      id:id,
+                      cust_type:cust_type,
+                      cust_name:cust_name,
+                      cust_add1:cust_add1,
+                      cust_add2:cust_add2,
+                      cust_country:cust_country,
+                      cust_city:cust_city,
+                      cust_region:cust_region,
+                      cust_zip:cust_zip,
+                      cust_email:cust_email,
+                      cust_officephone:cust_officephone,
+                      cust_mobile:cust_mobile,
+                      cust_fax:cust_fax,
+                      cust_website:cust_website
+                    },
+            success: function(data){
+                // console.log(data);
+                // $('#cust_type').val("");
+                // $('#cust_name').val("");
+                // $('#cust_add1').val("");
+                // $('#cust_add2').val("");
+                // $('#cust_country').val("");
+                // $('#cust_city').val("");
+                // $('#cust_region').val("");
+                // $('#cust_zip').val("");
+                // $('#cust_email').val("");
+                // $('#cust_officephone').val("");
+                // $('#cust_mobile').val("");
+                // $('#cust_fax').val("");
+                // $('#cust_website').val("");
+
+
+            }
+        });
+        return false;
+
   });
 
 
 //user information edit 
-  $(document).on('click', '#Customerdetail_update', function(){
-        var id               = $('#edit_id').val();
-        var cust_type        = $('#edit_type').val();
-        var cust_name        = $('#edit_name').val();
-        var cust_add1        = $('#edit_addr1').val();
-        var cust_add2        = $('#edit_addr2').val();
-        var cust_country     = $('#edit_country').val();
-        var cust_city        = $('#edit_city').val();
-        var cust_region      = $('#edit_region').val();
-        var cust_zip         = $('#edit_zip').val();
-        var cust_email       = $('#edit_email').val();
-        var cust_officephone = $('#edit_officephone').val();
-        var cust_mobile      = $('#edit_mobile').val();
-        var cust_fax         = $('#edit_fax').val();
-        var cust_website     = $('#edit_website').val();
+  $(document).on('click', '.Updation_information', function(){
+        var id               = $('#id').val();
+        var cust_type        = $('#cust_type').val();
+        var cust_name        = $('#cust_name').val();
+        var cust_add1        = $('#cust_addr1').val();
+        var cust_add2        = $('#cust_addr2').val();
+        var cust_country     = $('#cust_country').val();
+        var cust_city        = $('#cust_city').val();
+        var cust_region      = $('#cust_region').val();
+        var cust_zip         = $('#cust_zip').val();
+        var cust_email       = $('#cust_email').val();
+        var cust_officephone = $('#cust_officephone').val();
+        var cust_mobile      = $('#cust_mobile').val();
+        var cust_fax         = $('#cust_fax').val();
+        var cust_website     = $('#cust_website').val();
         
     $.ajax({
       type : "POST",
@@ -247,20 +307,20 @@ $(document).ready(function() {
       dataType : "JSON",
       data : {id:id,cust_type:cust_type,cust_name:cust_name,cust_add1:cust_add1,cust_add2:cust_add2,cust_country:cust_country,cust_city:cust_city,cust_region:cust_region,cust_zip:cust_zip,cust_email:cust_email,cust_officephone:cust_officephone,cust_mobile:cust_mobile,cust_fax:cust_fax,cust_website:cust_website},
       success: function(data){
-        $("#edit_id").val("");
-        $("#edit_type").val("");
-        $("#edit_name").val("");
-        $("#edit_addr1").val("");
-        $("#edit_addr2").val("");
-        $("#edit_country").val("");
-        $("#edit_city").val("");
-        $("#edit_region").val("");
-        $("#edit_zip").val("");
-        $("#edit_email").val("");
-        $("#edit_officephone").val("");
-        $("#edit_mobile").val("");
-        $("#edit_fax").val("");
-        $("#edit_website").val("");
+        $("#id").val("");
+        $("#cust_type").val("");
+        $("#cust_name").val("");
+        $("#cust_addr1").val("");
+        $("#cust_addr2").val("");
+        $("#cust_country").val("");
+        $("#cust_city").val("");
+        $("#cust_region").val("");
+        $("#cust_zip").val("");
+        $("#cust_email").val("");
+        $("#cust_officephone").val("");
+        $("#cust_mobile").val("");
+        $("#cust_fax").val("");
+        $("#cust_website").val("");
       }
     });
     return false;
