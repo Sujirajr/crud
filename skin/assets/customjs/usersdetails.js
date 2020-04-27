@@ -30,6 +30,7 @@ $(document).ready(function() {
 
 // save new Customer details
   $(document).on('click', '#Customerdetail_submit', function(){
+
         var cust_type        = $('#cust_type').val();
         var cust_name        = $('#cust_name').val();
         var cust_add1        = $('#cust_add1').val();
@@ -48,7 +49,21 @@ $(document).ready(function() {
             type : "POST",
             url  : base_url+"welcome/userinformation_save",
             dataType : "JSON",
-            data : {cust_type:cust_type,cust_name:cust_name,cust_add1:cust_add1,cust_add2:cust_add2,cust_country:cust_country,cust_city:cust_city,cust_region:cust_region,cust_zip:cust_zip,cust_email:cust_email,cust_officephone:cust_officephone,cust_mobile:cust_mobile,cust_fax:cust_fax,cust_website:cust_website},
+            data : {
+                      cust_type:cust_type,
+                      cust_name:cust_name,
+                      cust_add1:cust_add1,
+                      cust_add2:cust_add2,
+                      cust_country:cust_country,
+                      cust_city:cust_city,
+                      cust_region:cust_region,
+                      cust_zip:cust_zip,
+                      cust_email:cust_email,
+                      cust_officephone:cust_officephone,
+                      cust_mobile:cust_mobile,
+                      cust_fax:cust_fax,
+                      cust_website:cust_website
+                    },
             success: function(data){
                 // console.log(data);
                 $('#cust_type').val("");
