@@ -108,9 +108,29 @@ $(document).ready(function() {
    });
  });
 
+$('.kt_update_usersinformation').on('click',function(){
+    $("#edit_id").val($(this).data('id'));
+    $("#edit_type").val($(this).data('cust_type'));
+    $("#edit_name").val($(this).data('cust_name'));
+    $("#edit_addr1").val($(this).data('cust_add1'));
+    $("#edit_addr2").val($(this).data('cust_add2'));
+    $("#edit_country").val($(this).data('cust_country'));
+    $("#edit_city").val($(this).data('cust_city'));
+    $("#edit_region").val($(this).data('cust_region'));
+    $("#edit_zip").val($(this).data('cust_zip'));
+    $("#edit_email").val($(this).data('cust_email'));
+    $("#edit_officephone").val($(this).data('cust_officephone'));
+    $("#edit_mobile").val($(this).data('cust_mobile'));
+    $("#edit_fax").val($(this).data('cust_fax'));
+    $("#edit_website").val($(this).data('cust_website'));
+
+  });
+
+
+
 //user information edit 
   $(document).on('click', '#Customerdetail_update', function(){
-        var user_Id          = $('#edit_id').val();
+        var id               = $('#edit_id').val();
         var cust_type        = $('#edit_type').val();
         var cust_name        = $('#edit_name').val();
         var cust_add1        = $('#edit_addr1').val();
@@ -129,7 +149,7 @@ $(document).ready(function() {
       type : "POST",
       url  : base_url+"welcome/user_information_edit",
       dataType : "JSON",
-      data : {id:user_Id,cust_type:cust_type,cust_name:cust_name,cust_add1:cust_add1,cust_add2:cust_add2,cust_country:cust_country,cust_city:cust_city,cust_region:cust_region,cust_zip:cust_zip,cust_email:cust_email,cust_officephone:cust_officephone,cust_mobile:cust_mobile,cust_fax:cust_fax,cust_website:cust_website},
+      data : {id:id,cust_type:cust_type,cust_name:cust_name,cust_add1:cust_add1,cust_add2:cust_add2,cust_country:cust_country,cust_city:cust_city,cust_region:cust_region,cust_zip:cust_zip,cust_email:cust_email,cust_officephone:cust_officephone,cust_mobile:cust_mobile,cust_fax:cust_fax,cust_website:cust_website},
       success: function(data){
         $("#edit_id").val("");
         $("#edit_type").val("");
