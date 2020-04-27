@@ -74,7 +74,7 @@ $(document).ready(function() {
   $(document).on('click', '#Customerdetail_submit', function(){
    swal({
      title: "Done",
-     text: "test",
+     text: " Submission Sucessfully ",
      timer: 1500,
       showConfirmButton: false,
      type: 'success'
@@ -85,7 +85,7 @@ $(document).ready(function() {
   $(document).on('click', '#Customerdetail_update', function(){
    swal({
      title: "Done",
-     text: "test",
+     text: "Update Sucessfully",
      timer: 1500,
       showConfirmButton: false,
      type: 'success'
