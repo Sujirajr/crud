@@ -112,6 +112,14 @@ function __construct()
         echo json_encode($output);
   }
 
+   public function user_information_click()
+   {
+    $id = $this->input->post('id');
+    $data=$this->Welcome_Model->get_userinformation_edit($id);
+    echo json_encode($data);
+   }
+
+
      /*******************************************************************************
      * Author : Bincy                                                              *
      * Detail : Save table for User Information 
