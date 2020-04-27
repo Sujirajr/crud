@@ -91,7 +91,7 @@
 
 						<div class="row">
 								<div class="alert alert-light alert-elevate" role="alert" style="width:100%">
-								<div class="alert-icon" data-skin="brand" data-toggle="kt-tooltip" data-placement="top" title="" data-original-title="Help"></i></div>
+								
 								<div class="alert-text"><span class="kt-font-success kt-font-boldest"></span>
 									 
 
@@ -298,5 +298,8 @@
 <style type="text/css">
 	.table-responsive {
       overflow-x: inherit !important;
+     }
+     .odd-row{
+     	background-color: #0097ff14;
      }
 </style>
