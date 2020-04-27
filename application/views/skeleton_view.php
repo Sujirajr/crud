@@ -121,7 +121,8 @@ Add New User
 </div>
 </div>
 <!--begin::Form-->
-<form class="kt-form kt-form--label-right">
+<form class="kt-form kt-form--label-right" id="user-form">
+
 <input type="hidden" id="id" name="id">
 
 <div class="kt-portlet__body">
@@ -214,7 +215,10 @@ Add New User
 				<input class="submit btn btn-primary float-right mr-2" id="Customerdetail_submit" type="submit" value="Login">
 <!-- <button type="submit" class="submit btn btn-primary float-right mr-2" id="Customerdetail_submit" value="Login">Submit</button> -->
 
+
 <button type="submit" class="btn btn-primary float-right mr-2" id="Customerdetail_submit">Submit</button>
+<button type="reset" class="btn btn-secondary float-right mr-2">Cancel</button></div>
+
 <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
 </div>
 </div>
