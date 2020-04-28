@@ -49,7 +49,10 @@ $(document).ready(function() {
                 }
             }
         ],
-        "select": true,
+        "select": {
+            style:    'os',
+            selector: 'td:first-child'
+        },
         "pagingType": 'full_numbers',
         "iDisplayLength": 10,
         "processing": true,
@@ -63,19 +66,26 @@ $(document).ready(function() {
             "type": "POST",
             "data": function ( data ) {
             }
-        },
-        "columnDefs": [
-        { 
-            "targets": [ 0 ],
-            "orderable": false,
-        },
-        ],
+        }
 
 
     });
 
+$.myjQuery = function() {
+            alert("jQuery");
+            table.destroy();
+    table.ajax.reload();
+         };
+
+function refresh_tab(){
+    alert("hii");
+    table.destroy();
+    table.ajax.reload();
+}
+
 
   $(document).on('click', '#Customerdetail_submit', function(){
+            $.myjQuery();
 
          $('#user-form').validate(  {
           rules: {
@@ -115,7 +125,7 @@ $(document).ready(function() {
            return false;
         }
 
-
+        var cust_id        = $('#id').val();  
         var cust_type        = $('#cust_type').val();
         var cust_name        = $('#cust_name').val();
         var cust_add1        = $('#cust_add1').val();
@@ -135,18 +145,19 @@ $(document).ready(function() {
             url  : base_url+"welcome/userinformation_save",
             dataType : "JSON",
             data : {
-                      cust_type:cust_type,
-                      cust_name:cust_name,
-                      cust_add1:cust_add1,
-                      cust_add2:cust_add2,
+                      cust_id     :cust_id, 
+                      cust_type   :cust_type,
+                      cust_name   :cust_name,
+                      cust_add1   :cust_add1,
+                      cust_add2   :cust_add2,
                       cust_country:cust_country,
-                      cust_city:cust_city,
-                      cust_region:cust_region,
-                      cust_zip:cust_zip,
-                      cust_email:cust_email,
+                      cust_city   :cust_city,
+                      cust_region :cust_region,
+                      cust_zip    :cust_zip,
+                      cust_email  :cust_email,
                       cust_officephone:cust_officephone,
-                      cust_mobile:cust_mobile,
-                      cust_fax:cust_fax,
+                      cust_mobile :cust_mobile,
+                      cust_fax    :cust_fax,
                       cust_website:cust_website
                     },
             success: function(data){
@@ -164,6 +175,7 @@ $(document).ready(function() {
                 $('#cust_mobile').val("");
                 $('#cust_fax').val("");
                 $('#cust_website').val("");
+                
 
           swal({
             title: "Done",
@@ -176,7 +188,9 @@ $(document).ready(function() {
 
             }
         });
+
         return false;
+
     });
 
   
@@ -193,6 +207,13 @@ $(document).ready(function() {
 
 $(document).on('click', '.Customerdetail_update', function(){
 
+           if($(".card-title").attr('aria-expanded')=='false')
+           {
+
+             $(".card-title").trigger("click"); 
+             
+           }
+              
            var user_id = $(this).attr("data-id");  
            $.ajax({  
                url  : base_url+"welcome/user_information_click",
@@ -202,7 +223,7 @@ $(document).on('click', '.Customerdetail_update', function(){
                 dataType:"json",  
                 success:function(data)  
                 {
-                     console.log(data.id);  
+                     console.log(data);  
                      $('#cust_type').val(data.cust_type);  
                      $('#cust_name').val(data.cust_name); 
                      $('#cust_add1').val(data.cust_add1);  
@@ -215,14 +236,16 @@ $(document).on('click', '.Customerdetail_update', function(){
                      $('#cust_officephone').val(data.cust_officephone); 
                      $('#cust_mobile').val(data.cust_mobile);  
                      $('#cust_fax').val(data.cust_fax);  
-                     $('#cust_website').val(data.cust_website);  
+                     $('#cust_website').val(data.cust_website);
+                     $('#id').val(user_id);  
                 }  
            })  
       });  
 
 //user information edit 
   $(document).on('click', '#Customerdetail_update', function(){
-    alert("Update");
+        
+        
         // var id               = $('#user_id').val();
         var cust_type        = $('#cust_type').val();
         var cust_name        = $('#cust_name').val();

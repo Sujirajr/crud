@@ -66,15 +66,27 @@ function __construct()
 
   public function userdetails_lists()
   {
-   $list = $this->Welcome_Model->get_userdetaillist_datatable();
-        $data = array(); 
-        $no = $_POST['start'];
+        $list = $this->Welcome_Model->get_userdetaillist_datatable();
         
+        $data = array(); 
+        
+        $no   = $_POST['start'];
+        
+        $i    = 0;
+
+        $row   = array();
+
+        
+            
         foreach ($list as $user_detail) {
+            
+
+
             $no++;
-            $row   = array();
-            $row[] = $no;
-            $row[] = '<span style="overflow: visible; position: relative;    width: 80px;">
+            
+          
+            $row[0] = $no;
+            $row[1] = '<span style="overflow: visible; position: relative; width: 80px;">
                         <div class="dropdown"><a data-toggle="dropdown" class="btn btn-sm btn-clean btn-icon btn-icon-md">                                  
                         <i class="flaticon-more-1"></i></a>
                         <div class="dropdown-menu dropdown-menu-right">
@@ -92,23 +104,31 @@ function __construct()
                         <span class="kt-nav__link-text kt_del_usersinformation" id='.$user_detail->id.' data-id='.$user_detail->id.'>Delete</span></span></li>
 
                        </ul></div></div></span>';
-            $row[] = $user_detail->cust_type;
-            $row[] = $user_detail->cust_name;
-            $row[] = $user_detail->cust_add1;
-            $row[] = $user_detail->cust_add2;
-            $row[] = $user_detail->cust_country;
-            $row[] = $user_detail->cust_city;
-            $row[] = $user_detail->cust_region;           
-            $row[] = $user_detail->cust_zip;
-            $row[] = $user_detail->cust_email;
-            $row[] = $user_detail->cust_officephone;
-            $row[] = $user_detail->cust_mobile;
-            $row[] = $user_detail->cust_fax;
-            $row[] = $user_detail->cust_website;                     
+            $row[2] = $user_detail->cust_type;
+            $row[3] = $user_detail->cust_name;
+            $row[4] = $user_detail->cust_add1;
+            $row[5] = $user_detail->cust_add2;
+            $row[6] = $user_detail->cust_country;
+            $row[7] = $user_detail->cust_city;
+            $row[8] = $user_detail->cust_region;           
+            $row[9] = $user_detail->cust_zip;
+            $row[10] = $user_detail->cust_email;
+            $row[11] = $user_detail->cust_officephone;
+            $row[12] = $user_detail->cust_mobile;
+            $row[13] = $user_detail->cust_fax;
+            $row[14] = $user_detail->cust_website;                     
             
-                      $data[] = $row;
+            //echo "<pre>";
+            //print_r($row);
+
+                      $data[$i] = $row;
+                      $i++;
+
         }
 
+// echo "<pre>";
+// print_r($data);
+// exit();
         $output = array(
                     "draw"            => $_POST['draw'],
                     "recordsTotal"    => $this->Welcome_Model->count_alls(),
