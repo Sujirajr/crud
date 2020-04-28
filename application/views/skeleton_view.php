@@ -189,12 +189,10 @@ Add New User
 </div> 
 
 <div class="form-group row">
-
 <div class="col-lg-4">
 <label class=""> Customer Address2:</label>
 <textarea class="form-control edited" rows="1" id="cust_add2" name="cust_add2" placeholder="Enter Your Address"></textarea>
 </div>
-
 </div>  
  </div>
  <div class="kt-portlet__foot">
@@ -202,9 +200,8 @@ Add New User
 <div class="row">
 <div class="col-lg-4"></div>
 <div class="col-lg-8">
-<!-- <button type="submit" class="btn btn-primary float-right mr-2" id="Customerdetail_submit">Submit</button> -->
 
-<button type="submit" id="Customerdetail_submit" class="btn btn-primary float-right mr-2"><?php echo isset($view[0]->id) ? 'Update' : 'Submit' ?></button>
+<button type="submit" id="Customerdetail_submit" class="btn btn-primary float-right mr-2">Submit</button>
 
 <button type="reset" class="btn btn-secondary float-right mr-2">Cancel</button></div>
 <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
@@ -231,8 +228,7 @@ Add New User
 						<!-- begin:: Content -->
 						
 
-							<div class="alert alert-light alert-elevate" style="width:100%" role="alert">
-								
+<div class="alert alert-light alert-elevate" style="width:100%" role="alert">
 <div ng-controller="users" data-ng-init="usersInformation()" class="container">
 	<div class="row">
 		<div class="add_panel" style="display: none">
@@ -242,7 +238,7 @@ Add New User
 		</div>
 		<div class="table-responsive">
 		
-					    <table id="userdetails_list" class="table table-no-border" cellspacing="0" width="100%" style="text-align: left">
+	<table id="userdetails_list" class="table table-no-border" cellspacing="0" width="100%" style="text-align: left">
 
 				<thead>
 					<tr>
@@ -291,9 +287,6 @@ Add New User
 
 <script src="<?php echo back_skin; ?>assets/customjs/usersdetails.js"></script>
 <script src="<?php echo back_skin; ?>assets/plugins/custom/datatables/jquery.dataTables.min.js"></script>
-
-
-
 
 <!------->
 

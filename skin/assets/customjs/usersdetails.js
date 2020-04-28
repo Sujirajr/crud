@@ -1,6 +1,5 @@
     /*******************************************************************************
-     * Author : Bincy                                                              *
-     * Detail : User Information save,update,delete
+     * Detail : User Information data listing
      * Date   : 24-04-2020                                                         *
      *******************************************************************************/
 
@@ -50,7 +49,7 @@ $(document).ready(function() {
             }
         ],
         "select": {
-            style:    'os',
+            style   :  'os',
             selector: 'td:first-child'
         },
         "pagingType": 'full_numbers',
@@ -71,13 +70,13 @@ $(document).ready(function() {
 
     });
 
+
     $.reloadTable = function() 
     {
         table.ajax.reload();
     };
 
   $(document).on('click', '#Customerdetail_submit', function(){
-            
 
          $('#user-form').validate(  {
           rules: {
@@ -92,9 +91,7 @@ $(document).ready(function() {
             cust_website : "required",
             cust_mobile  : "required",
 
-
-
-          },
+            },
           messages: {
             cust_type  : "Please specify your Customer Type",
             cust_email : {
@@ -117,7 +114,7 @@ $(document).ready(function() {
            return false;
         }
 
-        var cust_id        = $('#id').val();  
+        var cust_id          = $('#id').val();  
         var cust_type        = $('#cust_type').val();
         var cust_name        = $('#cust_name').val();
         var cust_add1        = $('#cust_add1').val();
@@ -153,7 +150,6 @@ $(document).ready(function() {
                       cust_website:cust_website
                     },
             success: function(data){
-                // console.log(data);
                 $('#cust_type').val("");
                 $('#cust_name').val("");
                 $('#cust_add1').val("");
@@ -168,7 +164,6 @@ $(document).ready(function() {
                 $('#cust_fax').val("");
                 $('#cust_website').val("");
                 
-
           swal({
             title: "Done",
             text: " Submission Sucessfully ",
@@ -196,17 +191,12 @@ $(document).ready(function() {
 
     });
 
-  
-  //alert for update submission\
- //  $(document).on('click', '#Customerdetail_update', function(){
- //   swal({
- //     title: "Done",
- //     text: "Update Sucessfully",
- //     timer: 1500,
- //      showConfirmButton: false,
- //     type: 'success'
- //   });
- // });
+     /*******************************************************************************
+     * Author : Bincy                                                              *
+     * Detail :Edit Button click to show the data for userinformation
+     * Date   : 24-04-2020                                                         *
+     *******************************************************************************/
+    
 
 $(document).on('click', '.Customerdetail_update', function(){
 
@@ -244,50 +234,11 @@ $(document).on('click', '.Customerdetail_update', function(){
                 }  
            })  
       });  
-
-//user information edit 
-  $(document).on('click', '#Customerdetail_update', function(){
-        
-        
-        // var id               = $('#user_id').val();
-        var cust_type        = $('#cust_type').val();
-        var cust_name        = $('#cust_name').val();
-        var cust_add1        = $('#cust_add1').val();
-        var cust_add2        = $('#cust_add2').val();
-        var cust_country     = $('#cust_country').val();
-        var cust_city        = $('#cust_city').val();
-        var cust_region      = $('#cust_region').val();
-        var cust_zip         = $('#cust_zip').val();
-        var cust_email       = $('#cust_email').val();
-        var cust_officephone = $('#cust_officephone').val();
-        var cust_mobile      = $('#cust_mobile').val();
-        var cust_fax         = $('#cust_fax').val();
-        var cust_website     = $('#cust_website').val();
-        
-    $.ajax({
-      type : "POST",
-      url  : base_url+"welcome/user_information_edit",
-      dataType : "JSON",
-      data : {cust_type:cust_type,cust_name:cust_name,cust_add1:cust_add1,cust_add2:cust_add2,cust_country:cust_country,cust_city:cust_city,cust_region:cust_region,cust_zip:cust_zip,cust_email:cust_email,cust_officephone:cust_officephone,cust_mobile:cust_mobile,cust_fax:cust_fax,cust_website:cust_website},
-      success: function(data){
-        $("#cust_type").val("");
-        $("#cust_name").val("");
-        $("#cust_add1").val("");
-        $("#cust_add2").val("");
-        $("#cust_country").val("");
-        $("#cust_city").val("");
-        $("#cust_region").val("");
-        $("#cust_zip").val("");
-        $("#cust_email").val("");
-        $("#cust_officephone").val("");
-        $("#cust_mobile").val("");
-        $("#cust_fax").val("");
-        $("#cust_website").val("");
-      }
-    });
-    return false;
-  });
-//delete for userinformation
+     /*******************************************************************************
+     * Author : Bincy                                                              *
+     * Detail :delete for userinformation
+     * Date   : 24-04-2020                                                         *
+     *******************************************************************************/
      $(document).on('click', '.kt_del_usersinformation', function () {
      var id = $(this).attr('id');
        Swal.fire({
