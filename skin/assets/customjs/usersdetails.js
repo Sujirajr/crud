@@ -201,7 +201,7 @@ $(document).on('click', '.Customerdetail_update', function(){
            alert(user_id);  
  
            $.ajax({  
-                url:"<?php echo base_url(); ?>welcome/user_information_click",  
+               url  : base_url+"welcome/user_information_click",
                 method:"POST",  
                 data:{user_id:user_id},  
                 dataType:"json",  
