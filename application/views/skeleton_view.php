@@ -123,7 +123,9 @@ Add New User
  
 <!--begin::Form-->
 <form class="kt-form kt-form--label-right" id="user-form" method="POST">
+
 <input type="hidden" name="id" id="id" value="">
+
 <div class="kt-portlet__body">
 <div class="form-group row">
 <div class="col-lg-4">

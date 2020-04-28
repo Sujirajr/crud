@@ -52,10 +52,9 @@ function __construct()
           $data['view']=$this->Welcome_Model->edit_datas($id);
           // print_r($data['view']);
           // exit();
-        
-      }
+        }
         $data['title'] = "User Details";
-       $this->load->view('skeleton_view', $data);
+        $this->load->view('skeleton_view', $data);
 }
     
      /*******************************************************************************
