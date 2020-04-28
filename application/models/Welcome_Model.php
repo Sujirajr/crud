@@ -212,8 +212,8 @@ class Welcome_Model extends CI_Model
      * Date   : 24-04-2020                                                         *
      *******************************************************************************/
 
-    public function user_updates(){
-        $id              =$this->input->post('user_id');
+    public function user_updates($id){
+        $id              =$this->input->post('id');
         $cust_type       =$this->input->post('cust_type');
         $cust_name       =$this->input->post('cust_name');
         $cust_add1       =$this->input->post('cust_add1');
@@ -245,6 +245,14 @@ class Welcome_Model extends CI_Model
         return $result; 
     }
 
+    public function edit_datas($id)
+    {
+          $this->db->select("*"); 
+          $this->db->from("users_information");  
+          $this->db->where("id", $id);
+          $query=$this->db->get();  
+          return $query->result();  
+    }
     public function fetch_single_user($user_id)  
       {  
           $this->db->select("*");  
@@ -350,7 +358,32 @@ class Welcome_Model extends CI_Model
      *******************************************************************************/
 
       public function Userdetailsave(){
-        $data  = array( 
+        if (isset($request['id']) && $request['id'] != "") 
+        {
+             $data  = array( 
+                   'cust_type'        => $this->input->post('cust_type'), 
+                   'cust_name'        => $this->input->post('cust_name'),        
+                   'cust_add1'        => $this->input->post('cust_add1'),
+                   'cust_add2'        => $this->input->post('cust_add2'), 
+                   'cust_country'     => $this->input->post('cust_country'),        
+                   'cust_city'        => $this->input->post('cust_city'),
+                   'cust_region'      => $this->input->post('cust_region'), 
+                   'cust_zip'         => $this->input->post('cust_zip'),        
+                   'cust_email'       => $this->input->post('cust_email'),
+                   'cust_officephone' => $this->input->post('cust_officephone'), 
+                   'cust_mobile'      => $this->input->post('cust_mobile'),        
+                   'cust_fax'         => $this->input->post('cust_fax'),
+                   'cust_website'     => $this->input->post('cust_website')
+
+                 );
+        $this->db->where('id', $this->input->post('id'));
+        $this->db->update('users_information',$data);
+        return $this->input->post('id');
+
+        
+        }
+        else{
+               $data  = array( 
                    'cust_type'        => $this->input->post('cust_type'), 
                    'cust_name'        => $this->input->post('cust_name'),        
                    'cust_add1'        => $this->input->post('cust_add1'),
@@ -366,9 +399,13 @@ class Welcome_Model extends CI_Model
                   'cust_website'      => $this->input->post('cust_website')
 
                  );
-        $result = $this->db->insert('users_information',$data);
-        return $result;
-    }
+         $this->db->insert('users_information',$data);
+         $id = $this->db->insert_id();
+          }
+        return $id;
+    
+
+}
 
 
 

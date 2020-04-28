@@ -45,16 +45,18 @@ function __construct()
     public function crud()
   {
         $data=array();
-        if(isset($_REQUEST['id']))
-        {
-        $id=$_REQUEST['id'];
-        print_r($id);
-        exit();
+        if(isset($_REQUEST['id'])){
+          $id=$_REQUEST['id'];
+          // print_r($id);
+          // exit();
+          $data['view']=$this->Welcome_Model->edit_datas($id);
+          // print_r($data['view']);
+          // exit();
+        
       }
-      
         $data['title'] = "User Details";
-        $this->load->view('skeleton_view', $data);
-  }
+       $this->load->view('skeleton_view', $data);
+}
     
      /*******************************************************************************
      * Author : Bincy                                                              *
@@ -143,7 +145,9 @@ function __construct()
 
     public function user_information_edit()
   {
-    $data=$this->Welcome_Model->user_updates();
+    $output = array();
+    $id=$this->input->post('id');
+    $data=$this->Welcome_Model->user_updates($id);
     echo json_encode($data);
   }
     /*******************************************************************************
