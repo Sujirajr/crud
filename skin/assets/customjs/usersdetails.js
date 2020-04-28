@@ -199,7 +199,8 @@ $(document).on('click', '.Customerdetail_update', function(){
 
            var user_id = $(this).attr("data-id");  
            $.ajax({  
-                url: base_url+"welcome/user_information_click",  
+               url  : base_url+"welcome/user_information_click",
+
                 method:"POST",  
                 data:{user_id:user_id},  
                 dataType:"json",  

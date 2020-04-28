@@ -120,6 +120,8 @@ function __construct()
 
     // $id = $this->input->post('id');
     $data=$this->Welcome_Model->fetch_single_user($_POST['user_id']);
+    // print_r($data);
+    // exit();
     echo json_encode($data);
    }
 

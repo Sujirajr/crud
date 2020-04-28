@@ -254,8 +254,7 @@ class Welcome_Model extends CI_Model
     public function fetch_single_user($user_id)  
       {  
           $this->db->select("*");  
-
-           $this->db->where("id", $user_id);  
+          $this->db->where("id", $user_id);  
            $query=$this->db->get('users_information');  
            return $query->row();  
       } 
