@@ -122,52 +122,60 @@ Add New User
 </div>
 <!--begin::Form-->
 <form class="kt-form kt-form--label-right" id="user-form">
-
-<input type="hidden" id="id" name="id">
+<input type="text" id="id" name="id" value="<?php echo isset($_REQUEST['id'])?$_REQUEST['id']:'';?>">
 
 <div class="kt-portlet__body">
 <div class="form-group row">
 <div class="col-lg-4">
 <label> Customer Type:</label>
 <input type="text" class="form-control" placeholder="Enter Customer Type " id="cust_type" name="cust_type">
+<span class="form-text text-muted">Please enter your  Type </span>
 </div>
 <div class="col-lg-4">
 <label>Customer Name:</label>
 <input type="text" class="form-control" placeholder="Enter Customer Name" id="cust_name" name="cust_name">
+<span class="form-text text-muted">Please enter your  Name</span>
 </div>
 <div class="col-lg-4">
 <label>Customer Address:</label>
 <textarea class="form-control edited" rows="1" id="cust_add1" name="cust_add1" placeholder="Enter Your Address"></textarea>
 
+<span class="form-text text-muted">Please enter your  Address</span>
 </div>
 </div>  
 <div class="form-group row">
 <div class="col-lg-4">
 <label class=""> Customer Address2:</label>
 <textarea class="form-control edited" rows="1" id="cust_add2" name="cust_add2" placeholder="Enter Your Address"></textarea>
+<span class="form-text text-muted">Please enter your  Address2 </span>
 </div>
 <div class="col-lg-4">
 <label>Customer Country :</label>
 <input type="text" class="form-control" placeholder="Enter Customer Country" id="cust_country" name="cust_country">
 
+<span class="form-text text-muted">Please enter your  Country</span>
 </div>
 <div class="col-lg-4">
 <label>Customer City:</label>
 <input type="text" class="form-control" placeholder="Enter  City" id="cust_city" name="cust_city">
+<span class="form-text text-muted">Please enter your City </span>
 </div>
 </div>  
 <div class="form-group row">
 <div class="col-lg-4">
 <label>Customer Region:</label>
 <input type="text" class="form-control" placeholder="Enter Customer Region " id="cust_region" name="cust_region">
+<span class="form-text text-muted">Please enter  Region</span>
 </div>
 <div class="col-lg-4">
 <label class="">Customer Zip:</label>
 <input type="text" class="form-control" placeholder="Enter Customer  Zip"id="cust_zip" name="cust_zip">
+<span class="form-text text-muted">Please enter   Zip</span>
 </div>
 <div class="col-lg-4">
 <label>Customer Email:</label>
 <input type="text" class="form-control" placeholder="Enter Customer  Email" id="cust_email" name="cust_email">
+<span class="form-text text-muted">Please enter your  Email</span>
 </div>
 </div>  
 
@@ -175,14 +183,17 @@ Add New User
 <div class="col-lg-4">
 <label>Customer Office Phone:</label>
 <input type="text" class="form-control" placeholder="Enter Customer   Office Phone " id="cust_officephone" name="cust_officephone">
+<span class="form-text text-muted">Please enter your   Office Phone</span>
 </div>
 <div class="col-lg-4">
 <label class="">Customer  Mobile Number:</label>
 <input type="text" class="form-control" placeholder="Enter  Customer  Mobile Number" id="cust_mobile" name="cust_mobile">
+<span class="form-text text-muted">Please enter your   Mobile Number </span>
 </div>
 <div class="col-lg-4">
 <label>Customer Fax:</label>
 <input type="text" class="form-control" placeholder="Enter Customer Fax" id="cust_fax" name="cust_fax" >
+<span class="form-text text-muted">Please enter  your Fax</span>
 </div>
 </div> 
 
@@ -190,6 +201,7 @@ Add New User
 <div class="col-lg-4">
 <label>Customer Website:</label>
 <input type="text" class="form-control" placeholder="Enter Customer Website" id="cust_website" name="cust_website">
+<span class="form-text text-muted">Please enter your Website</span>
 </div>
 </div>  
  </div>
@@ -198,14 +210,10 @@ Add New User
 <div class="row">
 <div class="col-lg-4"></div>
 <div class="col-lg-8">
-
 				<input class="submit btn btn-primary float-right mr-2" id="Customerdetail_submit" type="submit" value="Login">
 <!-- <button type="submit" class="submit btn btn-primary float-right mr-2" id="Customerdetail_submit" value="Login">Submit</button> -->
 
-
-<button type="submit" class="btn btn-primary float-right mr-2" id="Customerdetail_submit">Submit</button>
 <button type="reset" class="btn btn-secondary float-right mr-2">Cancel</button></div>
-
 <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
 </div>
 </div>
@@ -279,7 +287,14 @@ Add New User
 							<!-- begin:: Main Content -->
 
 							<!-- End:: Main Content -->
-			
+				
+
+		
+
+
+
+
+
 
 
 						<?php  $this->load->view("common/footer"); ?>
@@ -320,5 +335,8 @@ Add New User
      }
      .odd-row{
      	background-color: #0097ff14;
+     }
+     .error{
+     color: #e73d4a;
      }
 </style>
