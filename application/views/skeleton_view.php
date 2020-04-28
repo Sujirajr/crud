@@ -120,16 +120,14 @@ Add New User
 </h3>
 </div>
 </div>
+ 
 <!--begin::Form-->
-<form class="kt-form kt-form--label-right" id="user-form">
-
-<input type="hidden" id="id" name="id">
-
+<form class="kt-form kt-form--label-right" id="user-form" method="POST">
 <div class="kt-portlet__body">
 <div class="form-group row">
 <div class="col-lg-4">
 <label> Customer Type:</label>
-<input type="text" class="form-control" placeholder="Enter Customer Type " id="cust_type" name="cust_type">
+<input type="text" class="form-control" placeholder="Enter Customer Type " id="cust_type" name="cust_type" >
 </div>
 <div class="col-lg-4">
 <label>Customer Name:</label>
@@ -198,12 +196,10 @@ Add New User
 <div class="row">
 <div class="col-lg-4"></div>
 <div class="col-lg-8">
-
-				<input class="submit btn btn-primary float-right mr-2" id="Customerdetail_submit" type="submit" value="Login">
-<!-- <button type="submit" class="submit btn btn-primary float-right mr-2" id="Customerdetail_submit" value="Login">Submit</button> -->
-
-
-<button type="submit" class="btn btn-primary float-right mr-2" id="Customerdetail_submit">Submit</button>
+	<input type="hidden" name="user_id" id="user_id" class="form-control">
+  <input type="hidden" name="what" value="userinfo_update">
+  <input class="submit btn btn-primary float-right mr-2" id="Customerdetail_submit" type="submit" value="Login"> 
+<button type="submit" class="btn btn-primary float-right mr-2" id="Customerdetail_submit"><?php echo isset($_REQUEST['id']) ? 'Update' : 'Submit' ?></button>
 <button type="reset" class="btn btn-secondary float-right mr-2">Cancel</button></div>
 
 <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>

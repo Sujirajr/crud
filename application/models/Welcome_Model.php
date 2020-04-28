@@ -190,6 +190,9 @@ class Welcome_Model extends CI_Model
         return $query->result();
     }
     
+    // public function user_information
+
+    
     /*******************************************************************************
      * Author : Bincy                                                              *
      * Detail : get the details for User Information 
@@ -216,11 +219,11 @@ class Welcome_Model extends CI_Model
      *******************************************************************************/
 
     public function user_updates(){
-        $id              =$this->input->post('id');
+        $id              =$this->input->post('user_id');
         $cust_type       =$this->input->post('cust_type');
         $cust_name       =$this->input->post('cust_name');
-        $cust_add1       =$this->input->post('cust_addr1');
-        $cust_add2       =$this->input->post('cust_addr2');
+        $cust_add1       =$this->input->post('cust_add1');
+        $cust_add2       =$this->input->post('cust_add2');
         $cust_country    =$this->input->post('cust_country');
         $cust_city       =$this->input->post('cust_city');
         $cust_region     =$this->input->post('cust_region');
@@ -232,8 +235,8 @@ class Welcome_Model extends CI_Model
         $cust_website    =$this->input->post('cust_website');
         $this->db->set('cust_type', $cust_type);
         $this->db->set('cust_name', $cust_name);
-        $this->db->set('cust_addr1', $cust_add1);
-        $this->db->set('cust_addr2', $cust_add2);
+        $this->db->set('cust_add1', $cust_add1);
+        $this->db->set('cust_add2', $cust_add2);
         $this->db->set('cust_country', $cust_country);
         $this->db->set('cust_city', $cust_city);
         $this->db->set('cust_region', $cust_region);
@@ -247,6 +250,13 @@ class Welcome_Model extends CI_Model
         $result=$this->db->update('users_information');
         return $result; 
     }
+
+    public function fetch_single_user($user_id)  
+      {  
+           $this->db->where("id", $user_id);  
+           $query=$this->db->get('users_information');  
+           return $query->result();  
+      } 
 
     /*******************************************************************************
      * Author : Bincy                                                              *
