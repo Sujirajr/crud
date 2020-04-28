@@ -55,10 +55,13 @@
 
 		<!--end::Layout Skins -->
 		<link rel="shortcut icon" href="<?php echo back_skin; ?>assets/media/logos/favicon.ico" />
-		<script type="text/javascript">
-			var base_url = "<?php echo base_url(); ?>";
-		</script>
+		
 	</head>
+    <input type="hidden" id="base_url" name="base_url" value="<?php echo base_url();?>">
+	
+	    <script type="text/javascript">
+			var base_url = $('#base_url').val();
+		</script>
 
 	<!-- end::Head -->
 
