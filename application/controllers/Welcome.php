@@ -48,6 +48,8 @@ function __construct()
         if(isset($_REQUEST['id']))
         {
         $id=$_REQUEST['id'];
+        print_r($id);
+        exit();
       }
       
         $data['title'] = "User Details";
@@ -117,12 +119,8 @@ function __construct()
    public function user_information_click()
    {
         $output = array();  
-
-    // $id = $this->input->post('id');
-    $data=$this->Welcome_Model->fetch_single_user($_POST['user_id']);
-    // print_r($data);
-    // exit();
-    echo json_encode($data);
+        $data=$this->Welcome_Model->fetch_single_user($_POST['user_id']);
+        echo json_encode($data);
    }
 
 
@@ -179,9 +177,6 @@ function __construct()
   {
      
     $view_data["done"] = $this->Welcome_Model->insert_update_user(); 
-
-
-
 
   }
 

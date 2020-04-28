@@ -6,14 +6,10 @@
 
 
 $(document).ready(function() {
-  // alert("njan vanu");
-
   jQuery.validator.setDefaults({
   debug: true,
   success: "valid"
 });
-
-
 
     var table = $('#userdetails_list').DataTable({
         "dom"        : 'Bfrtip',
@@ -206,8 +202,9 @@ $(document).on('click', '.Customerdetail_update', function(){
                 dataType:"json",  
                 success:function(data)  
                 {
+
                      console.log(data.id);  
-                   $('#cust_type').val(data.cust_type);  
+                     $('#cust_type').val(data.cust_type);  
                      $('#cust_name').val(data.cust_name); 
                      $('#cust_add1').val(data.cust_add1);  
                      $('#cust_add2').val(data.cust_add2); 
@@ -215,13 +212,11 @@ $(document).on('click', '.Customerdetail_update', function(){
                      $('#cust_city').val(data.cust_city); 
                      $('#cust_region').val(data.cust_region);  
                      $('#cust_zip').val(data.cust_zip); 
-
-
-                    $('#cust_email').val(data.cust_email);  
+                     $('#cust_email').val(data.cust_email);  
                      $('#cust_officephone').val(data.cust_officephone); 
                      $('#cust_mobile').val(data.cust_mobile);  
                      $('#cust_fax').val(data.cust_fax);  
-                     $('#cust_website').val(cust_website);  
+                     $('#cust_website').data(cust_website);  
                 }  
            })  
       });  

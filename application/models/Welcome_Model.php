@@ -40,9 +40,6 @@ class Welcome_Model extends CI_Model
     $return = $return['to_do'];
 
     return $return;
-
-
-
      }
 
 
@@ -189,10 +186,7 @@ class Welcome_Model extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
-    
-    // public function user_information
-
-    
+        
     /*******************************************************************************
      * Author : Bincy                                                              *
      * Detail : get the details for User Information 
