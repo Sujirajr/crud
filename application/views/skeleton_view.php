@@ -123,7 +123,7 @@ Add New User
  
 <!--begin::Form-->
 <form class="kt-form kt-form--label-right" id="user-form" method="POST">
-
+<input type="hidden" name="id" value="<?php echo isset($view[0]->id) ? $view[0]->id : ''  ?>">
 <div class="kt-portlet__body">
 <div class="form-group row">
 <div class="col-lg-4">
@@ -200,9 +200,10 @@ Add New User
 <div class="row">
 <div class="col-lg-4"></div>
 <div class="col-lg-8">
-	<input type="hidden" name="user_id" id="user_id" class="form-control">
-  <input type="hidden" name="what" value="userinfo_update">
-<button type="submit" class="btn btn-primary float-right mr-2" id="Customerdetail_submit"><?php echo isset($_REQUEST['id']) ? 'Update' : 'Submit' ?></button>
+<!-- <button type="submit" class="btn btn-primary float-right mr-2" id="Customerdetail_submit">Submit</button> -->
+
+<button type="submit" id="Customerdetail_submit" class="btn btn-primary float-right mr-2"><?php echo isset($view[0]->id) ? 'Update' : 'Submit' ?></button>
+
 <button type="reset" class="btn btn-secondary float-right mr-2">Cancel</button></div>
 <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
 </div>
