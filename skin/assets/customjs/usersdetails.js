@@ -14,6 +14,7 @@ $(document).ready(function() {
 });
 
 
+
     var table = $('#userdetails_list').DataTable({
         "dom"        : 'Bfrtip',
         "lengthMenu" : [

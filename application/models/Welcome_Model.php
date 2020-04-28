@@ -375,4 +375,6 @@ class Welcome_Model extends CI_Model
         return $result;
     }
 
+
+
 }
