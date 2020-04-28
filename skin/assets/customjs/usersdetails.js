@@ -196,8 +196,8 @@ $(document).ready(function() {
  });
 
 $(document).on('click', '.Customerdetail_update', function(){
-alert("mjan edit ayi");  
-           var user_id = $(this).attr("id");  
+alert("edit ayi");  
+           var user_id = $(this).attr("data-id");  
            $.ajax({  
                 url:"<?php echo base_url(); ?>welcome/user_information_click",  
                 method:"POST",  
