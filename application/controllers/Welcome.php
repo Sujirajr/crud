@@ -78,7 +78,7 @@ function __construct()
                         <a href="'.base_url().'welcome/crud?id='.$user_detail->id.'"><li class="kt-nav__item">
                         <span class="kt-nav__link">
                         <i class="kt-nav__link-icon flaticon2-contract"></i>
-                        <span class="kt-nav__link-text Customerdetail_update">Edit</span>
+                        <span class="kt-nav__link-text Customerdetail_update" data-id='.$user_detail->id.'>Edit</span>
                         </span></li></a>
                     
                           <li class="kt-nav__item">
