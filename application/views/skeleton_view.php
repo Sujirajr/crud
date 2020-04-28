@@ -123,7 +123,7 @@ Add New User
  
 <!--begin::Form-->
 <form class="kt-form kt-form--label-right" id="user-form" method="POST">
-
+<input type="hidden" name="id" value="<?php echo isset($view[0]->id) ? $view[0]->id : ''  ?>">
 <div class="kt-portlet__body">
 <div class="form-group row">
 <div class="col-lg-4">
@@ -134,75 +134,65 @@ Add New User
 <div class="col-lg-4">
 <label>Customer Name:</label>
 <input type="text" class="form-control" placeholder="Enter Customer Name" id="cust_name" name="cust_name">
-<span class="form-text text-muted">Please enter your  Name</span>
-</div>
-<div class="col-lg-4">
-<label>Customer Address:</label>
-<textarea class="form-control edited" rows="1" id="cust_add1" name="cust_add1" placeholder="Enter Your Address"></textarea>
-
-<span class="form-text text-muted">Please enter your  Address</span>
-</div>
-</div>  
-<div class="form-group row">
-<div class="col-lg-4">
-<label class=""> Customer Address2:</label>
-<textarea class="form-control edited" rows="1" id="cust_add2" name="cust_add2" placeholder="Enter Your Address"></textarea>
-<span class="form-text text-muted">Please enter your  Address2 </span>
 </div>
 <div class="col-lg-4">
 <label>Customer Country :</label>
 <input type="text" class="form-control" placeholder="Enter Customer Country" id="cust_country" name="cust_country">
 
-<span class="form-text text-muted">Please enter your  Country</span>
-</div>
-<div class="col-lg-4">
-<label>Customer City:</label>
-<input type="text" class="form-control" placeholder="Enter  City" id="cust_city" name="cust_city">
-<span class="form-text text-muted">Please enter your City </span>
 </div>
 </div>  
 <div class="form-group row">
 <div class="col-lg-4">
+<label>Customer City:</label>
+<input type="text" class="form-control" placeholder="Enter  City" id="cust_city" name="cust_city">
+</div>
+<div class="col-lg-4">
 <label>Customer Region:</label>
 <input type="text" class="form-control" placeholder="Enter Customer Region " id="cust_region" name="cust_region">
-<span class="form-text text-muted">Please enter  Region</span>
 </div>
 <div class="col-lg-4">
 <label class="">Customer Zip:</label>
 <input type="text" class="form-control" placeholder="Enter Customer  Zip"id="cust_zip" name="cust_zip">
-<span class="form-text text-muted">Please enter   Zip</span>
 </div>
+</div>  
+<div class="form-group row">
 <div class="col-lg-4">
 <label>Customer Email:</label>
 <input type="text" class="form-control" placeholder="Enter Customer  Email" id="cust_email" name="cust_email">
-<span class="form-text text-muted">Please enter your  Email</span>
+</div>
+<div class="col-lg-4">
+<label>Customer Office Phone:</label>
+<input type="text" class="form-control" placeholder="Enter Customer   Office Phone " id="cust_officephone" name="cust_officephone">
+</div>
+<div class="col-lg-4">
+<label class="">Customer  Mobile Number:</label>
+<input type="text" class="form-control" placeholder="Enter  Customer  Mobile Number" id="cust_mobile" name="cust_mobile">
 </div>
 </div>  
 
 <div class="form-group row">
 <div class="col-lg-4">
-<label>Customer Office Phone:</label>
-<input type="text" class="form-control" placeholder="Enter Customer   Office Phone " id="cust_officephone" name="cust_officephone">
-<span class="form-text text-muted">Please enter your   Office Phone</span>
-</div>
-<div class="col-lg-4">
-<label class="">Customer  Mobile Number:</label>
-<input type="text" class="form-control" placeholder="Enter  Customer  Mobile Number" id="cust_mobile" name="cust_mobile">
-<span class="form-text text-muted">Please enter your   Mobile Number </span>
-</div>
-<div class="col-lg-4">
 <label>Customer Fax:</label>
 <input type="text" class="form-control" placeholder="Enter Customer Fax" id="cust_fax" name="cust_fax" >
-<span class="form-text text-muted">Please enter  your Fax</span>
+</div>
+<div class="col-lg-4">
+<label>Customer Website:</label>
+<input type="text" class="form-control" placeholder="Enter Customer Website" id="cust_website" name="cust_website">
+</div>
+<div class="col-lg-4">
+<label>Customer Address:</label>
+<textarea class="form-control edited" rows="1" id="cust_add1" name="cust_add1" placeholder="Enter Your Address"></textarea>
+
 </div>
 </div> 
 
 <div class="form-group row">
+
 <div class="col-lg-4">
-<label>Customer Website:</label>
-<input type="text" class="form-control" placeholder="Enter Customer Website" id="cust_website" name="cust_website">
-<span class="form-text text-muted">Please enter your Website</span>
+<label class=""> Customer Address2:</label>
+<textarea class="form-control edited" rows="1" id="cust_add2" name="cust_add2" placeholder="Enter Your Address"></textarea>
 </div>
+
 </div>  
  </div>
  <div class="kt-portlet__foot">
@@ -210,12 +200,9 @@ Add New User
 <div class="row">
 <div class="col-lg-4"></div>
 <div class="col-lg-8">
-	<input type="hidden" name="user_id" id="user_id" class="form-control">
-  <input type="hidden" name="what" value="userinfo_update">
-  <input class="submit btn btn-primary float-right mr-2" id="Customerdetail_submit" type="submit" value="Login"> 
-<button type="submit" class="btn btn-primary float-right mr-2" id="Customerdetail_submit"><?php echo isset($_REQUEST['id']) ? 'Update' : 'Submit' ?></button>
+<!-- <button type="submit" class="btn btn-primary float-right mr-2" id="Customerdetail_submit">Submit</button> -->
 
-				
+<button type="submit" id="Customerdetail_submit" class="btn btn-primary float-right mr-2"><?php echo isset($view[0]->id) ? 'Update' : 'Submit' ?></button>
 
 <button type="reset" class="btn btn-secondary float-right mr-2">Cancel</button></div>
 <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
@@ -292,13 +279,6 @@ Add New User
 
 							<!-- End:: Main Content -->
 				
-
-		
-
-
-
-
-
 
 
 						<?php  $this->load->view("common/footer"); ?>

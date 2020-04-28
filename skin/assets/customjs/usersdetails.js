@@ -6,14 +6,10 @@
 
 
 $(document).ready(function() {
-  // alert("njan vanu");
-
   jQuery.validator.setDefaults({
   debug: true,
   success: "valid"
 });
-
-
 
     var table = $('#userdetails_list').DataTable({
         "dom"        : 'Bfrtip',
@@ -185,28 +181,29 @@ $(document).ready(function() {
 
   
   //alert for update submission\
-  $(document).on('click', '#Customerdetail_update', function(){
-   swal({
-     title: "Done",
-     text: "Update Sucessfully",
-     timer: 1500,
-      showConfirmButton: false,
-     type: 'success'
-   });
- });
+ //  $(document).on('click', '#Customerdetail_update', function(){
+ //   swal({
+ //     title: "Done",
+ //     text: "Update Sucessfully",
+ //     timer: 1500,
+ //      showConfirmButton: false,
+ //     type: 'success'
+ //   });
+ // });
 
 $(document).on('click', '.Customerdetail_update', function(){
 
            var user_id = $(this).attr("data-id");  
            $.ajax({  
-                url: base_url+"welcome/user_information_click",  
+               url  : base_url+"welcome/user_information_click",
+
                 method:"POST",  
                 data:{user_id:user_id},  
                 dataType:"json",  
                 success:function(data)  
                 {
                      console.log(data.id);  
-                   $('#cust_type').val(data.cust_type);  
+                     $('#cust_type').val(data.cust_type);  
                      $('#cust_name').val(data.cust_name); 
                      $('#cust_add1').val(data.cust_add1);  
                      $('#cust_add2').val(data.cust_add2); 
@@ -214,22 +211,19 @@ $(document).on('click', '.Customerdetail_update', function(){
                      $('#cust_city').val(data.cust_city); 
                      $('#cust_region').val(data.cust_region);  
                      $('#cust_zip').val(data.cust_zip); 
-
-
-                    $('#cust_email').val(data.cust_email);  
+                     $('#cust_email').val(data.cust_email);  
                      $('#cust_officephone').val(data.cust_officephone); 
                      $('#cust_mobile').val(data.cust_mobile);  
                      $('#cust_fax').val(data.cust_fax);  
-                     $('#cust_website').val(cust_website);  
+                     $('#cust_website').val(data.cust_website);  
                 }  
            })  
       });  
 
-
-
 //user information edit 
-  $(document).on('click', '#Customerdetail_submit', function(){
-        var id               = $('#user_id').val();
+  $(document).on('click', '#Customerdetail_update', function(){
+    alert("Update");
+        // var id               = $('#user_id').val();
         var cust_type        = $('#cust_type').val();
         var cust_name        = $('#cust_name').val();
         var cust_add1        = $('#cust_add1').val();
@@ -248,9 +242,8 @@ $(document).on('click', '.Customerdetail_update', function(){
       type : "POST",
       url  : base_url+"welcome/user_information_edit",
       dataType : "JSON",
-      data : {id:id,cust_type:cust_type,cust_name:cust_name,cust_add1:cust_add1,cust_add2:cust_add2,cust_country:cust_country,cust_city:cust_city,cust_region:cust_region,cust_zip:cust_zip,cust_email:cust_email,cust_officephone:cust_officephone,cust_mobile:cust_mobile,cust_fax:cust_fax,cust_website:cust_website},
+      data : {cust_type:cust_type,cust_name:cust_name,cust_add1:cust_add1,cust_add2:cust_add2,cust_country:cust_country,cust_city:cust_city,cust_region:cust_region,cust_zip:cust_zip,cust_email:cust_email,cust_officephone:cust_officephone,cust_mobile:cust_mobile,cust_fax:cust_fax,cust_website:cust_website},
       success: function(data){
-        $("#user_id").val("");
         $("#cust_type").val("");
         $("#cust_name").val("");
         $("#cust_add1").val("");
