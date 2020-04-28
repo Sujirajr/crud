@@ -24,7 +24,7 @@ $(document).ready(function() {
         "buttons": [
             {
              extend: 'pageLength',
-             className:'btn btn-danger btn-outline-brand btn-elevate btn-pill'  
+             className:'btn btn-outline-brand btn-elevate btn-pill'  
             },
             {
              extend: 'copy',
@@ -44,7 +44,7 @@ $(document).ready(function() {
             },
             {
                 extend: 'print',
-                text: 'Print all (not just selected)',
+                text: 'Print all',
                 className:'btn btn-outline-brand btn-elevate btn-pill',
                 exportOptions: {
                     modifier: {
