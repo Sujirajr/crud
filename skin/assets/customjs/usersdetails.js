@@ -20,7 +20,7 @@ $(document).ready(function() {
         "buttons": [
             {
              extend: 'pageLength',
-             className:'btn btn-danger btn-outline-brand btn-elevate btn-pill'  
+             className:'btn btn-outline-brand btn-elevate btn-pill'  
             },
             {
              extend: 'copy',
@@ -71,21 +71,13 @@ $(document).ready(function() {
 
     });
 
-$.myjQuery = function() {
-            alert("jQuery");
-            table.destroy();
-    table.ajax.reload();
-         };
-
-function refresh_tab(){
-    alert("hii");
-    table.destroy();
-    table.ajax.reload();
-}
-
+    $.reloadTable = function() 
+    {
+        table.ajax.reload();
+    };
 
   $(document).on('click', '#Customerdetail_submit', function(){
-            $.myjQuery();
+            
 
          $('#user-form').validate(  {
           rules: {
@@ -185,6 +177,17 @@ function refresh_tab(){
             type: 'success'
           });
 
+          
+           if($(".card-title").attr('aria-expanded')=='true')
+           {
+
+             $(".card-title").trigger("click"); 
+             
+           }
+
+          setTimeout(function(){
+              $.reloadTable();
+          }, 3000 );
 
             }
         });
