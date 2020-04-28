@@ -65,6 +65,7 @@ function __construct()
    $list = $this->Welcome_Model->get_userdetaillist_datatable();
         $data = array(); 
         $no = $_POST['start'];
+        
         foreach ($list as $user_detail) {
             $no++;
             $row   = array();
@@ -75,10 +76,10 @@ function __construct()
                         <div class="dropdown-menu dropdown-menu-right">
                         <ul class="kt-nav">
 
-                        <a href="'.base_url().'welcome/crud?id='.$user_detail->id.'"><li class="kt-nav__item">
+                        <a href="#"><li class="kt-nav__item">
                         <span class="kt-nav__link">
                         <i class="kt-nav__link-icon flaticon2-contract"></i>
-                        <span class="kt-nav__link-text Customerdetail_update" data-id='.$user_detail->id.'>Edit</span>
+                        <span class="kt-nav__link-text Customerdetail_update" data-id="'.$user_detail->id.'">Edit</span>
                         </span></li></a>
                     
                           <li class="kt-nav__item">

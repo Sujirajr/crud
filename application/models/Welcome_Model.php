@@ -256,7 +256,7 @@ class Welcome_Model extends CI_Model
           $this->db->select("*");  
           $this->db->where("id", $user_id);  
            $query=$this->db->get('users_information');  
-           return $query->result();  
+           return $query->row();  
       } 
 
     /*******************************************************************************

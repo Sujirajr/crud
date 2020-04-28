@@ -196,17 +196,18 @@ $(document).ready(function() {
  });
 
 $(document).on('click', '.Customerdetail_update', function(){
-// alert("edit ayi");  
-           var user_id = $(this).attr("data-id"); 
-           alert(user_id);  
- 
+
+           var user_id = $(this).attr("data-id");  
            $.ajax({  
                url  : base_url+"welcome/user_information_click",
+
                 method:"POST",  
                 data:{user_id:user_id},  
                 dataType:"json",  
                 success:function(data)  
-                {   $('#cust_type').val(data.cust_type);  
+                {
+                     console.log(data.id);  
+                   $('#cust_type').val(data.cust_type);  
                      $('#cust_name').val(data.cust_name); 
                      $('#cust_add1').val(data.cust_add1);  
                      $('#cust_add2').val(data.cust_add2); 
