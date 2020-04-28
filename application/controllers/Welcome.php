@@ -49,6 +49,7 @@ function __construct()
         {
         $id=$_REQUEST['id'];
       }
+      
         $data['title'] = "User Details";
         $this->load->view('skeleton_view', $data);
   }
@@ -77,7 +78,7 @@ function __construct()
                         <a href="'.base_url().'welcome/crud?id='.$user_detail->id.'"><li class="kt-nav__item">
                         <span class="kt-nav__link">
                         <i class="kt-nav__link-icon flaticon2-contract"></i>
-                        <span class="kt-nav__link-text Customerdetail_submit">Edit</span>
+                        <span class="kt-nav__link-text Customerdetail_update">Edit</span>
                         </span></li></a>
                     
                           <li class="kt-nav__item">
@@ -114,8 +115,10 @@ function __construct()
 
    public function user_information_click()
    {
-    $id = $this->input->post('id');
-    $data=$this->Welcome_Model->get_userinformation_edit($id);
+        $output = array();  
+
+    // $id = $this->input->post('id');
+    $data=$this->Welcome_Model->fetch_single_user($_POST['user_id']);
     echo json_encode($data);
    }
 
@@ -173,6 +176,8 @@ function __construct()
   {
      
     $view_data["done"] = $this->Welcome_Model->insert_update_user(); 
+
+
 
 
   }
