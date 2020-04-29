@@ -6,8 +6,11 @@ class Welcome_Model extends CI_Model
 {
 
     private $table = 'users_information';
+    
     private $column_order = array(null, 'cust_type','cust_name','cust_add1','cust_add2','cust_country','cust_city','cust_region','cust_zip','cust_email','cust_officephone','cust_mobile','cust_fax','cust_website');
+    
     private $column_search = array('cust_type','cust_name','cust_add1','cust_add2','cust_country','cust_city','cust_region','cust_zip','cust_email','cust_officephone','cust_mobile','cust_fax','cust_website');
+    
     private $order = array('id' => 'DESC');
 
     
@@ -173,8 +176,11 @@ class Welcome_Model extends CI_Model
      public   function count_filtered()
     {
         $this->_get_datatables_userdetails();
+
         $this->db->where('users_information.del_flag',1);
+
         $query = $this->db->get();
+
         return $query->num_rows();
     }
 
@@ -196,14 +202,22 @@ class Welcome_Model extends CI_Model
      public function get_userdetaillist_datatable()
     {
 
-        $this->_get_datatables_userdetails();
+
         if($_POST['length'] != -1)
         $this->db->limit($_POST['length'], $_POST['start']);
+
+        $this->db->distinct();
+
         $this->db->select('u.id,u.cust_type,u.cust_name,u.cust_add1,u.cust_add2,u.cust_country,u.cust_city,u.cust_region,u.cust_zip,u.cust_email,u.cust_officephone,u.cust_mobile,u.cust_fax,u.cust_website');
+
         $this->db->from('users_information as u');
        
         $this->db->where('u.del_flag',1);
+
+         $this->db->from($this->table);
+
         $query = $this->db->get();
+
         return $query->result();
     } 
      /*******************************************************************************
@@ -269,85 +283,34 @@ class Welcome_Model extends CI_Model
 
     public  function _get_datatables_userdetails()
     {
-        if($this->input->post('cust_type'))
-        {
-            $this->db->where('cust_type', $this->input->post('cust_type'));
-        }
-        if($this->input->post('cust_name'))
-        {
-            $this->db->like('cust_name', $this->input->post('cust_name'));
-        }
-        if($this->input->post('cust_add1'))
-        {
-            $this->db->like('cust_add1', $this->input->post('cust_add1'));
-        }
-        if($this->input->post('cust_add2'))
-        {
-            $this->db->like('cust_add2', $this->input->post('cust_add2'));
-        }
-        if($this->input->post('cust_country'))
-        {
-            $this->db->like('cust_country', $this->input->post('cust_country'));
-        }
-        if($this->input->post('cust_city'))
-        {
-            $this->db->like('cust_city', $this->input->post('cust_city'));
-        }
-        if($this->input->post('cust_region'))
-        {
-            $this->db->like('cust_region', $this->input->post('cust_region'));
-        }
-        if($this->input->post('cust_zip'))
-        {
-            $this->db->like('cust_zip', $this->input->post('cust_zip'));
-        }
-        if($this->input->post('cust_email'))
-        {
-            $this->db->like('cust_email', $this->input->post('cust_email'));
-        }
-        if($this->input->post('cust_officephone'))
-        {
-            $this->db->like('cust_officephone', $this->input->post('cust_officephone'));
-        }
-           if($this->input->post('cust_mobile'))
-        {
-            $this->db->like('cust_mobile', $this->input->post('cust_mobile'));
-        }
-           if($this->input->post('cust_fax'))
-        {
-            $this->db->like('cust_fax', $this->input->post('cust_fax'));
-        }
-           if($this->input->post('cust_website'))
-        {
-            $this->db->like('cust_website', $this->input->post('cust_website'));
-        }
-
+        
 
 
         $this->db->from($this->table);
-        $i = 0; 
-        foreach ($this->column_search as $item) 
-        {
-            if($_POST['search']['value']) 
-            {               
-                if($i===0) // first loop
-                {
-                    $this->db->group_start(); 
-                    $this->db->like($item, $_POST['search']['value']);
-                } else {
-                    $this->db->or_like($item, $_POST['search']['value']);
-                }
-                if(count($this->column_search) - 1 == $i) //last loop
-                    $this->db->group_end(); 
-            }
-            $i++;
-        }       
-        if(isset($_POST['order'])) { 
-            $this->db->order_by($this->column_order[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);
-        } else if(isset($this->order)) {
-            $order = $this->order;
-            $this->db->order_by(key($order), $order[key($order)]);
-        }
+        // $i = 0; 
+        // foreach ($this->column_search as $item) 
+        // {
+        //     if($_POST['search']['value']) 
+        //     {               
+        //         if($i===0) // first loop
+        //         {
+        //             $this->db->group_start(); 
+        //             $this->db->like($item, $_POST['search']['value']);
+        //         } else {
+        //             $this->db->or_like($item, $_POST['search']['value']);
+        //         }
+        //         if(count($this->column_search) - 1 == $i) //last loop
+        //             $this->db->group_end(); 
+        //     }
+        //     $i++;
+        // }       
+        
+        // if(isset($_POST['order'])) { 
+        //     $this->db->order_by($this->column_order[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);
+        // } else if(isset($this->order)) {
+        //     $order = $this->order;
+        //     $this->db->order_by(key($order), $order[key($order)]);
+        // }
  
 }
 
@@ -358,50 +321,43 @@ class Welcome_Model extends CI_Model
      *******************************************************************************/
 
       public function Userdetailsave(){
-        if (isset($request['id']) && $request['id'] != "") 
-        {
-             $data  = array( 
-                   'cust_type'        => $this->input->post('cust_type'), 
-                   'cust_name'        => $this->input->post('cust_name'),        
-                   'cust_add1'        => $this->input->post('cust_add1'),
-                   'cust_add2'        => $this->input->post('cust_add2'), 
-                   'cust_country'     => $this->input->post('cust_country'),        
-                   'cust_city'        => $this->input->post('cust_city'),
-                   'cust_region'      => $this->input->post('cust_region'), 
-                   'cust_zip'         => $this->input->post('cust_zip'),        
-                   'cust_email'       => $this->input->post('cust_email'),
-                   'cust_officephone' => $this->input->post('cust_officephone'), 
-                   'cust_mobile'      => $this->input->post('cust_mobile'),        
-                   'cust_fax'         => $this->input->post('cust_fax'),
-                   'cust_website'     => $this->input->post('cust_website')
+ 
 
-                 );
-        $this->db->where('id', $this->input->post('id'));
-        $this->db->update('users_information',$data);
-        return $this->input->post('id');
+        $data  = array( 
+           'cust_type'        => $this->input->post('cust_type'), 
+           'cust_name'        => $this->input->post('cust_name'),        
+           'cust_add1'        => $this->input->post('cust_add1'),
+           'cust_add2'        => $this->input->post('cust_add2'), 
+           'cust_country'     => $this->input->post('cust_country'),        
+           'cust_city'        => $this->input->post('cust_city'),
+           'cust_region'      => $this->input->post('cust_region'), 
+           'cust_zip'         => $this->input->post('cust_zip'),        
+           'cust_email'       => $this->input->post('cust_email'),
+           'cust_officephone' => $this->input->post('cust_officephone'), 
+           'cust_mobile'      => $this->input->post('cust_mobile'),        
+           'cust_fax'         => $this->input->post('cust_fax'),
+           'cust_website'     => $this->input->post('cust_website')
+
+         );
+
+        $cust_id = $this->input->post('cust_id');
+         
+        if (isset($cust_id) && $cust_id != "") 
+        {
+        
+            $this->db->where('id', $this->input->post('cust_id'));
+            $this->db->update('users_information',$data);
+            return $this->input->post('id');
 
         
         }
         else{
-               $data  = array( 
-                   'cust_type'        => $this->input->post('cust_type'), 
-                   'cust_name'        => $this->input->post('cust_name'),        
-                   'cust_add1'        => $this->input->post('cust_add1'),
-                   'cust_add2'        => $this->input->post('cust_add2'), 
-                   'cust_country'     => $this->input->post('cust_country'),        
-                   'cust_city'        => $this->input->post('cust_city'),
-                   'cust_region'      => $this->input->post('cust_region'), 
-                   'cust_zip'         => $this->input->post('cust_zip'),        
-                   'cust_email'       => $this->input->post('cust_email'),
-                   'cust_officephone' => $this->input->post('cust_officephone'), 
-                   'cust_mobile'      => $this->input->post('cust_mobile'),        
-                   'cust_fax'         => $this->input->post('cust_fax'),
-                  'cust_website'      => $this->input->post('cust_website')
-
-                 );
-         $this->db->insert('users_information',$data);
-         $id = $this->db->insert_id();
-          }
+            
+             $this->db->insert('users_information',$data);
+             $id = $this->db->insert_id();
+        
+        }
+        
         return $id;
     
 
