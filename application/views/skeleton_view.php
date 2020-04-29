@@ -123,7 +123,7 @@ Add New User
  
 <!--begin::Form-->
 <form class="kt-form kt-form--label-right" id="user-form" method="POST">
-<input type="hidden" name="id" value="<?php echo isset($view[0]->id) ? $view[0]->id : ''  ?>">
+<input type="text" name="id" value="<?php echo isset($view[0]->id) ? $view[0]->id : ''  ?>">
 <div class="kt-portlet__body">
 <div class="form-group row">
 <div class="col-lg-4">
