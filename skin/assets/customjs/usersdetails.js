@@ -10,6 +10,11 @@ $(document).ready(function() {
   success: "valid"
 });
 
+
+        
+     
+
+
     var table = $('#userdetails_list').DataTable({
         "dom"        : 'Bfrtip',
         "lengthMenu" : [
@@ -69,6 +74,7 @@ $(document).ready(function() {
 
 
     });
+
 
 
     $.reloadTable = function() 
