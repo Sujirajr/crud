@@ -109,7 +109,7 @@
 </div>
 </div>
 <div id="collapseOne6" class="collapse" aria-labelledby="headingOne6" data-parent="#accordionExample6" style="">
-<div class="card-body">
+<div class="">
 
 
 <div class="kt-portlet">
