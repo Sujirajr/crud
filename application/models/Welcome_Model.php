@@ -75,9 +75,7 @@ class Welcome_Model extends CI_Model
         $this->db->from('qrecruitment_process_status');
         $query = $this->db->get();
        
-      
-
-    $return = array();
+      $return = array();
 
     foreach ($query->result() as $category)
     {
@@ -88,9 +86,7 @@ class Welcome_Model extends CI_Model
 
     return $return;
 
-
-
-     }
+  }
 
        public function get_allprocess()
      {
@@ -162,7 +158,7 @@ class Welcome_Model extends CI_Model
 
      /*******************************************************************************
      * Author : Bincy                                                              *
-     * Detail : count the table for User Information 
+     * Detail : rows count  for User Information table
      * Date   : 24-04-2020                                                         *
      *******************************************************************************/
 
@@ -176,32 +172,19 @@ class Welcome_Model extends CI_Model
      public   function count_filtered()
     {
         $this->_get_datatables_userdetails();
-
         $this->db->where('users_information.del_flag',1);
-
         $query = $this->db->get();
-
         return $query->num_rows();
-    }
-
-    public function get_userinformation_edit($id)
-    {
-        $this->db->select('*');
-        $this->db->from('users_information');
-        $this->db->where('id',$id);
-        $query = $this->db->get();
-        return $query->result();
     }
         
     /*******************************************************************************
      * Author : Bincy                                                              *
-     * Detail : get the details for User Information 
+     * Detail : get details for datas User Information 
      * Date   : 24-04-2020                                                         *
      *******************************************************************************/
 
      public function get_userdetaillist_datatable()
     {
-
 
         if($_POST['length'] != -1)
         $this->db->limit($_POST['length'], $_POST['start']);
@@ -220,59 +203,13 @@ class Welcome_Model extends CI_Model
 
         return $query->result();
     } 
-     /*******************************************************************************
-     * Author : Bincy                                                              *
-     * Detail : update for User Information 
-     * Date   : 24-04-2020                                                         *
-     *******************************************************************************/
-
-    public function user_updates($id){
-        $id              =$this->input->post('id');
-        $cust_type       =$this->input->post('cust_type');
-        $cust_name       =$this->input->post('cust_name');
-        $cust_add1       =$this->input->post('cust_add1');
-        $cust_add2       =$this->input->post('cust_add2');
-        $cust_country    =$this->input->post('cust_country');
-        $cust_city       =$this->input->post('cust_city');
-        $cust_region     =$this->input->post('cust_region');
-        $cust_zip        =$this->input->post('cust_zip');
-        $cust_email      =$this->input->post('cust_email');
-        $cust_officephone=$this->input->post('cust_officephone');
-        $cust_mobile     =$this->input->post('cust_mobile');
-        $cust_fax        =$this->input->post('cust_fax');
-        $cust_website    =$this->input->post('cust_website');
-        $this->db->set('cust_type', $cust_type);
-        $this->db->set('cust_name', $cust_name);
-        $this->db->set('cust_add1', $cust_add1);
-        $this->db->set('cust_add2', $cust_add2);
-        $this->db->set('cust_country', $cust_country);
-        $this->db->set('cust_city', $cust_city);
-        $this->db->set('cust_region', $cust_region);
-        $this->db->set('cust_zip', $cust_zip);
-        $this->db->set('cust_email', $cust_email);
-        $this->db->set('cust_officephone', $cust_officephone);
-        $this->db->set('cust_mobile', $cust_mobile);
-        $this->db->set('cust_fax', $cust_fax);
-        $this->db->set('cust_website', $cust_website);
-        $this->db->where('id', $id);
-        $result=$this->db->update('users_information');
-        return $result; 
-    }
-
-    public function edit_datas($id)
-    {
-          $this->db->select("*"); 
-          $this->db->from("users_information");  
-          $this->db->where("id", $id);
-          $query=$this->db->get();  
-          return $query->result();  
-    }
+  
     public function fetch_single_user($user_id)  
       {  
           $this->db->select("*");  
           $this->db->where("id", $user_id);  
-           $query=$this->db->get('users_information');  
-           return $query->row();  
+          $query=$this->db->get('users_information');  
+          return $query->row();  
       } 
 
     /*******************************************************************************
@@ -283,9 +220,6 @@ class Welcome_Model extends CI_Model
 
     public  function _get_datatables_userdetails()
     {
-        
-
-
         $this->db->from($this->table);
         // $i = 0; 
         // foreach ($this->column_search as $item) 
@@ -349,7 +283,6 @@ class Welcome_Model extends CI_Model
             $this->db->update('users_information',$data);
             return $this->input->post('id');
 
-        
         }
         else{
             
@@ -359,9 +292,7 @@ class Welcome_Model extends CI_Model
         }
         
         return $id;
-    
-
-}
+    }
 
 
 
