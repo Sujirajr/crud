@@ -148,9 +148,9 @@ class Welcome_Model extends CI_Model
                 'del_flag' => 0
         );
 
-     $id=$this->input->post('id');
+     $id    = $this->input->post('id');
      $this->db->where('id', $id);
-     $result=$this->db->update('users_information',$data);
+     $result= $this->db->update('users_information',$data);
 
     return $result;
     
