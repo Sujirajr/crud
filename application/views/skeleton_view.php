@@ -109,7 +109,7 @@
 </div>
 </div>
 <div id="collapseOne6" class="collapse" aria-labelledby="headingOne6" data-parent="#accordionExample6" style="">
-<div class="">
+<div class="card-body">
 
 
 <div class="kt-portlet">
@@ -231,11 +231,7 @@ Add New User
 <div class="alert alert-light alert-elevate" style="width:100%" role="alert">
 <div ng-controller="users" data-ng-init="usersInformation()" class="container">
 	<div class="row">
-		<div class="add_panel" style="display: none">
-			<a ng-click="addModal();" class="model_form btn btn-primary">
-				<i class="glyphicon glyphicon-plus"></i> Add User</a>
-            <div class="clearfix"></div>
-		</div>
+		
 		<div class="table-responsive">
 		
 	<table id="userdetails_list" class="table table-no-border" cellspacing="0" width="100%" style="text-align: left">
