@@ -203,7 +203,6 @@ $(document).ready(function() {
      * Date   : 24-04-2020                                                         *
      *******************************************************************************/
     
-
 $(document).on('click', '.Customerdetail_update', function(){
 
            if($(".card-title").attr('aria-expanded')=='false')
