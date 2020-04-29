@@ -189,12 +189,10 @@ Add New User
 </div> 
 
 <div class="form-group row">
-
 <div class="col-lg-4">
 <label class=""> Customer Address2:</label>
 <textarea class="form-control edited" rows="1" id="cust_add2" name="cust_add2" placeholder="Enter Your Address"></textarea>
 </div>
-
 </div>  
  </div>
  <div class="kt-portlet__foot">

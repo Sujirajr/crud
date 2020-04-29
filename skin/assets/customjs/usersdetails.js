@@ -49,7 +49,7 @@ $(document).ready(function() {
             }
         ],
         "select": {
-            style:    'os',
+            style   :  'os',
             selector: 'td:first-child'
         },
         "pagingType": 'full_numbers',
@@ -125,7 +125,7 @@ function refresh_tab(){
            return false;
         }
 
-        var cust_id        = $('#id').val();  
+        var cust_id          = $('#id').val();  
         var cust_type        = $('#cust_type').val();
         var cust_name        = $('#cust_name').val();
         var cust_add1        = $('#cust_add1').val();

@@ -57,7 +57,7 @@ function __construct()
         $data = array(); 
         $no   = $_POST['start'];
         $i    = 0;
-        $row   = array();
+        $row  = array();
 
         foreach ($list as $user_detail) {
             
@@ -102,10 +102,10 @@ function __construct()
         }
 
         $output = array(
-                    "draw"            => $_POST['draw'],
-                    "recordsTotal"    => $this->Welcome_Model->count_alls(),
+                    "draw"                => $_POST['draw'],
+                    "recordsTotal"        => $this->Welcome_Model->count_alls(),
                         "recordsFiltered" => $this->Welcome_Model->count_filtered(),
-                    "data" => $data,
+                    "data"                => $data,
                 );
         echo json_encode($output);
   }
@@ -118,7 +118,7 @@ function __construct()
    public function user_information_click()
    {
         $output = array();  
-        $data=$this->Welcome_Model->fetch_single_user($_POST['user_id']);
+        $data   =$this->Welcome_Model->fetch_single_user($_POST['user_id']);
         echo json_encode($data);
    }
 
