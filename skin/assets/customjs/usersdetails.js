@@ -70,8 +70,6 @@ $(document).ready(function() {
 
     });
 
-
-
     $.reloadTable = function() 
     {
         table.ajax.reload();
@@ -173,14 +171,6 @@ $(document).ready(function() {
             type: 'success'
           });
 
-          
-           if($(".card-title").attr('aria-expanded')=='true')
-           {
-
-             $(".card-title").trigger("click"); 
-             
-           }
-
           setTimeout(function(){
               $.reloadTable();
           }, 3000 );
@@ -200,13 +190,6 @@ $(document).ready(function() {
     
 $(document).on('click', '.Customerdetail_update', function(){
 
-           if($(".card-title").attr('aria-expanded')=='false')
-           {
-
-             $(".card-title").trigger("click"); 
-             
-           }
-              
            var user_id = $(this).attr("data-id");  
            $.ajax({  
                url  : base_url+"welcome/user_information_click",
@@ -230,7 +213,9 @@ $(document).on('click', '.Customerdetail_update', function(){
                      $('#cust_mobile').val(data.cust_mobile);  
                      $('#cust_fax').val(data.cust_fax);  
                      $('#cust_website').val(data.cust_website);
-                     $('#id').val(user_id);  
+                     $('#id').val(user_id);
+                     $('#usersInformation').modal('show');
+  
                 }  
            })  
       });  
