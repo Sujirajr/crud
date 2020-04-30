@@ -117,7 +117,7 @@ function __construct()
   }
      /*******************************************************************************
      * Author : Bincy                                                              *
-     * Detail : Show table datas in User Information 
+     * Detail : Show details datas in User Information 
      * Date   : 24-04-2020                                                         *
      *******************************************************************************/
 

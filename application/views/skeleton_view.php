@@ -90,39 +90,22 @@
 						<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid" style="width:100%">
 
 						<div class="row">
-								<div class="alert alert-light alert-elevate" role="alert" style="width:100%">
 								
-								<div class="alert-text"><span class="kt-font-success kt-font-boldest"></span>
-									 
-
-   <!-- start acourdium -->
-
-<div class="kt-portlet " style="margin-bottom: 0px !important;">
-
-<div class="kt-portlet__body" style="padding: 0px !important;">
-<!--begin::Accordion-->
-<div class="accordion accordion-solid accordion-toggle-plus" id="accordionExample6">
-<div class="card">
-<div class="card-header" id="headingOne6">
-<div class="card-title collapsed" data-toggle="collapse" data-target="#collapseOne6" aria-expanded="false" aria-controls="collapseOne6">
-<i class="flaticon-pie-chart-1"></i> User Information Add Details
-</div>
-</div>
-<div id="collapseOne6" class="collapse" aria-labelledby="headingOne6" data-parent="#accordionExample6" style="">
-<div class="card-body">
-
-
-<div class="kt-portlet">
-<div class="kt-portlet__head">
-<div class="kt-portlet__head-label">
-<h3 class="kt-portlet__head-title">
-Add New User
-</h3>
-</div>
-</div>
- 
-<!--begin::Form-->
-<form class="kt-form kt-form--label-right" id="user-form" method="POST">
+<!--------------------add model------------------------------>
+ <div class="modal fade" id="usersInformation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+					<div class="kt-subheader__group" id="kt_subheader_search">
+							<span class="kt-subheader__desc" id="kt_subheader_total">
+									<h4 class="kt-font-boldest kt-font-transform-u">User Information  details  form </h4></span>
+								 	</div>
+	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									</button>
+						</div>
+	<div class="modal-body">
+									
+ <form class="kt-form kt-form--label-right" id="user-form" method="POST">
 
 <input type="hidden" name="id" id="id" value="">
 
@@ -203,44 +186,36 @@ Add New User
 
 <button type="submit" id="Customerdetail_submit" class="btn btn-primary float-right mr-2">Submit</button>
 
-<button type="reset" class="btn btn-secondary float-right mr-2">Cancel</button></div>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
-</div>
-</div>
-</div>
-</form>
-<!--end::Form-->
-</div>
-</div>
-</div>
-</div>
-</div>
-<!--end::Accordion-->
-</div>
+<button type="reset" class="btn btn-secondary float-right mr-2" data-dismiss="modal">Cancel</button></div>
 
-						<!-- end:: acourdium  -->
-
+</div>
+</div>
+</div>
+</form>						</div>
+									</div>
 								</div>
 							</div>
-							</div>
-						<!-- end:: Content Head -->
 
-						<!-- begin:: Content -->
-						
+
+<!-------------------end model---------------------------------->
 
 <div class="alert alert-light alert-elevate" style="width:100%" role="alert">
+								
 <div ng-controller="users" data-ng-init="usersInformation()" class="container">
 	<div class="row">
-		
+		<button class="btn btn-primary float-right mr-2" data-toggle="modal" data-target="#usersInformation">
+													<i class="la la-plus"></i>
+													New User Add 
+												</button>
 		<div class="table-responsive">
 		
-	<table id="userdetails_list" class="table table-no-border" cellspacing="0" width="100%" style="text-align: left">
+					    <table id="userdetails_list" class="table table-no-border" cellspacing="0" width="100%" style="text-align: left">
 
 				<thead>
 					<tr>
 						<th>S.No</th>
 						<th>Action</th>
-						<th>Customer Type</th>
+            <th>Customer Type</th>
 						<th>Customer Name</th>
 						<th>Address1</th>
 						<th>Address2</th>
@@ -261,10 +236,7 @@ Add New User
 		</div>
 		</div>
     
-    
-<!-- Form modal -->
  
-<!-- /form modal -->     
 </div>
 	</div>
 
@@ -283,6 +255,9 @@ Add New User
 
 <script src="<?php echo back_skin; ?>assets/customjs/usersdetails.js"></script>
 <script src="<?php echo back_skin; ?>assets/plugins/custom/datatables/jquery.dataTables.min.js"></script>
+
+
+
 
 <!------->
 
